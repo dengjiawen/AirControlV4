@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CoreConstants>
+
+    <CoreGraphics>
+        <RefreshRate>35</RefreshRate>
+    </CoreGraphics>
+
+    <LogUtils>
+        <showDebugMessages>1</showDebugMessages>
+        <showGeneralMessages>1</showGeneralMessages>
+        <showErrorMessages>1</showErrorMessages>
+        <showRepaintMessages>0</showRepaintMessages>
+
+        <updateIntervals>2500</updateIntervals>
+    </LogUtils>
+
+    <BlurUtils>
+        <iterationNumber>1</iterationNumber>
+        <filterType>16</filterType>
+    </BlurUtils>
+
+    <MaxZoom>3</MaxZoom>
+    <MinZoom>1</MinZoom>
+
+</CoreConstants>
