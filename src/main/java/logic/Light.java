@@ -1,5 +1,26 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Light.java
+ * -----------------------------------------------------------------------------
+ * This class contains a Light object that controls all aspects of the
+ * Airplane's lighting.
+ * <p>
+ * This class is a part of the AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.logic;
 
+import main.java.common.LogUtils;
 import main.java.constants.Constants;
 import main.java.constants.Definitions;
 import main.java.ui.RenderUtils;
@@ -8,6 +29,7 @@ import javax.swing.*;
 
 public class Light {
 
+    /* these booleans control various lighting */
     public boolean strobe_on;
     public byte strobe_count;
 
@@ -17,6 +39,7 @@ public class Light {
     public boolean nav_on;
     public boolean acl_on;
 
+    /* these parameter defines the position of the light */
     public int wingtip_strobe_offset_x;
     public int wingtip_strobe_offset_y;
 
@@ -31,6 +54,7 @@ public class Light {
     public int top_acl_offset_x;
     public int top_acl_offset_y;
 
+    /* these timer controls the strobe lighting */
     private Timer acl_light_regulator;
 
     private Timer strobe_regulator;
@@ -39,8 +63,14 @@ public class Light {
     private Timer tail_strobe_regulator;
     private Timer tail_strobe_rest_regulator;
 
-    public Light() {
+    /**
+     * Default constructor
+     */
+    Light() {
 
+        LogUtils.printGeneralMessage("New Light object " + this + " created!");
+
+        /* initialize controller timers */
         acl_light_regulator = new Timer(300, e -> {
 
             acl_on = !acl_on;
@@ -108,12 +138,17 @@ public class Light {
             }
         });
 
+        /* initialize position variables */
         init();
 
+        /* turn all light on */
         setAll(true);
 
     }
 
+    /**
+     * Method that loads all of the position parameters.
+     */
     public void init() {
 
         wingtip_nav_offset_x = Constants.getInt("wingTipOffsetX", Definitions.BOMBARDIER_PATCH);
@@ -132,15 +167,22 @@ public class Light {
 
     }
 
-    public void setACL(boolean on) {
+    /**
+     * The following methods toggle various lights on/off.
+     * @param on    whether the light is on (true = on, false = off)
+     */
 
+    private void setACL(boolean on) {
+
+        LogUtils.printGeneralMessage("Light object " + this + " signaling ACL = " + on + "!");
         if (on) acl_light_regulator.restart();
         else acl_light_regulator.stop();
 
     }
 
-    public void setStrobe(boolean on) {
+    private void setStrobe(boolean on) {
 
+        LogUtils.printGeneralMessage("Light object " + this + " signaling Strobe = " + on + "!");
         if (on) {
             strobe_regulator.restart();
             tail_strobe_regulator.restart();
@@ -151,13 +193,16 @@ public class Light {
 
     }
 
-    public void setNAV(boolean on) {
+    private void setNAV(boolean on) {
 
+        LogUtils.printGeneralMessage("Light object " + this + " signaling NAV = " + on + "!");
         nav_on = on;
 
     }
 
     public void setAll(boolean on) {
+
+        LogUtils.printGeneralMessage("Light object " + this + " signaling All Lights = " + on + "!");
 
         setStrobe(on);
         setACL(on);

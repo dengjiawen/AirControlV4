@@ -3,7 +3,7 @@ package main.java.music;
 import kuusisto.tinysound.Music;
 import kuusisto.tinysound.TinySound;
 
-public class MusicUtils { // Let it goo
+public class MusicUtils {
 
     public static void init () {
 //        //String bip = "/music/intro.ogg";
