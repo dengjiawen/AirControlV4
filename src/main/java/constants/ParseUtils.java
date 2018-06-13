@@ -78,15 +78,15 @@ public class ParseUtils {
     }
 
     /**
-     * Parse float from XML entries, using parseString
+     * Parse double from XML entries, using parseString
      * as a helper method.
      *
      * @param plist_name    name of the plist file
      * @param resource_name name of the requested resource
-     * @return parsed content (float)
+     * @return parsed content (double)
      */
-    public static float parseFloat(String plist_name, String resource_name) { // Fred, why are you giving Shawn consent?
-        return Float.parseFloat(parseString(plist_name, resource_name));
+    public static double parseDouble(String plist_name, String resource_name) { // Fred, why are you giving Shawn consent?
+        return Double.parseDouble(parseString(plist_name, resource_name));
     }
 
 

@@ -1,5 +1,7 @@
 package main.java.path;
 
+import main.java.constants.Definitions;
+import main.java.constants.ParseUtils;
 import main.java.path.math.LinearUtils;
 
 import java.awt.geom.Line2D;
@@ -7,28 +9,28 @@ import java.util.ArrayList;
 
 public class MapUtils {
 
-    static Line2D rwy26 = new Line2D.Double(9369, 576, 5649, 594);
-    static Line2D rwy35 = new Line2D.Double(6033, 3487, 6017, 145);
-    static Line2D rwy3L = new Line2D.Double(1719, 6222, 7105, 768);
-    static Line2D rwy3R = new Line2D.Double(4360, 4032, 8265, 71);
+    static Line2D rwy26 = loadLine("rwy26");
+    static Line2D rwy35 = loadLine("rwy35");
+    static Line2D rwy3L = loadLine("rwy3L");
+    static Line2D rwy3R = loadLine("rwy3R");
 
-    static Line2D taxiE = new Line2D.Double(2433, 6358, 7177, 1558);
-    static Line2D taxiD = new Line2D.Double(7194, 1625, 6707, 1142);
+    static Line2D taxiE = loadLine("taxiE");
+    static Line2D taxiD = loadLine("taxiD");
 
-    static Line2D taxiF = new Line2D.Float(4729, 3107, 6357, 3114);
-    static Line2D taxiF1 = new Line2D.Float(6182, 3167, 7140, 2622);
+    static Line2D taxiF = loadLine("taxiF");
+    static Line2D taxiF1 = loadLine("taxiF1");
 
-    static Line2D taxiC1 = new Line2D.Float(7600, 1220, 8831, 1221);
-    static Line2D taxiC2 = new Line2D.Float(6917, 1990, 7735, 1175);
-    static Line2D taxiC3 = new Line2D.Float(7077, 2926, 7076, 1740);
+    static Line2D taxiC1 = loadLine("taxiC1");
+    static Line2D taxiC2 = loadLine("taxiC2");
+    static Line2D taxiC3 = loadLine("taxiC3");
 
-    static Line2D taxiQ = new Line2D.Float(2052, 5846, 2555, 6274);
-    static Line2D taxiH = new Line2D.Float(3521, 4362, 4006, 4810);
-    static Line2D taxiP = new Line2D.Float(4933, 3912, 4664, 3646);
+    static Line2D taxiQ = loadLine("taxiQ");
+    static Line2D taxiH = loadLine("taxiH");
+    static Line2D taxiP = loadLine("taxiP");
 
-    static Line2D taxiB = new Line2D.Float(8016, 540, 8017, 1271);
+    static Line2D taxiB = loadLine("taxiB");
 
-    static Line2D taxiA = new Line2D.Float(8792, 1313, 8793, 548);
+    static Line2D taxiA = loadLine("taxiA");
 
     static ArrayList<Intersection> intersections = new ArrayList<>();
 
@@ -103,6 +105,18 @@ public class MapUtils {
         }
 
         return intersections;
+
+    }
+
+    private static Line2D loadLine(String line_name) {
+
+        double x1 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "X1");
+        double x2 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "X2");
+
+        double y1 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "Y1");
+        double y2 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "Y2");
+
+        return new Line2D.Double(x1, y1, x2, y2);
 
     }
 

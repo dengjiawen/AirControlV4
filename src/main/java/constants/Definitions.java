@@ -35,7 +35,10 @@ public enum Definitions {
     ZERO_DAY_PATCH_SUPPLEMENTARY("/constants/zero_day_patch/AddedDefinitions_2.constants"),
 
     /* Bombardier patch */
-    BOMBARDIER_PATCH("/constants/bombardier_patch/AddedDefinitions.constants");
+    BOMBARDIER_PATCH("/constants/bombardier_patch/AddedDefinitions.constants"),
+
+    /* added content */
+    DLC_1("/constants/dlc/DLCDefinitions.constants");
 
     private String path;    // path to definition file
 
@@ -53,7 +56,7 @@ public enum Definitions {
      * Method that returns the file path.
      * @return  string, file path
      */
-    String getPath() {
+    public String getPath() {
 
         return path;
 

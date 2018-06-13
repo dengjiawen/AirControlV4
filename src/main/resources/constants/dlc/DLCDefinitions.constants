@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DLCConstants>
+
+    <MapUtils>
+        <PathDefs>
+
+            <rwy26>
+                <rwy26X1>9369</rwy26X1>
+                <rwy26X2>5649</rwy26X2>
+
+                <rwy26Y1>576</rwy26Y1>
+                <rwy26Y2>594</rwy26Y2>
+            </rwy26>
+
+            <rwy35>
+                <rwy35X1>6033</rwy35X1>
+                <rwy35X2>6017</rwy35X2>
+
+                <rwy35Y1>3487</rwy35Y1>
+                <rwy35Y2>145</rwy35Y2>
+            </rwy35>
+
+            <rwy3L>
+                <rwy3LX1>1719</rwy3LX1>
+                <rwy3LX2>7105</rwy3LX2>
+
+                <rwy3LY1>6222</rwy3LY1>
+                <rwy3LY2>768</rwy3LY2>
+            </rwy3L>
+
+            <rwy3R>
+                <rwy3RX1>4360</rwy3RX1>
+                <rwy3RX2>8265</rwy3RX2>
+
+                <rwy3RY1>4032</rwy3RY1>
+                <rwy3RY2>71</rwy3RY2>
+            </rwy3R>
+
+            <taxiE>
+                <taxiEX1>2433</taxiEX1>
+                <taxiEX2>7177</taxiEX2>
+
+                <taxiEY1>6358</taxiEY1>
+                <taxiEY2>1558</taxiEY2>
+            </taxiE>
+
+            <taxiD>
+                <taxiDX1>7194</taxiDX1>
+                <taxiDX2>6707</taxiDX2>
+
+                <taxiDY1>1625</taxiDY1>
+                <taxiDY2>1142</taxiDY2>
+            </taxiD>
+
+            <taxiF>
+                <taxiFX1>4729</taxiFX1>
+                <taxiFX2>6357</taxiFX2>
+
+                <taxiFY1>3107</taxiFY1>
+                <taxiFY2>3114</taxiFY2>
+            </taxiF>
+
+            <taxiF1>
+                <taxiF1X1>6182</taxiF1X1>
+                <taxiF1X2>7140</taxiF1X2>
+
+                <taxiF1Y1>3167</taxiF1Y1>
+                <taxiF1Y2>2622</taxiF1Y2>
+            </taxiF1>
+
+            <taxiC1>
+                <taxiC1X1>7600</taxiC1X1>
+                <taxiC1X2>8831</taxiC1X2>
+
+                <taxiC1Y1>1220</taxiC1Y1>
+                <taxiC1Y2>1221</taxiC1Y2>
+            </taxiC1>
+
+            <taxiC2>
+                <taxiC2X1>6917</taxiC2X1>
+                <taxiC2X2>7735</taxiC2X2>
+
+                <taxiC2Y1>1990</taxiC2Y1>
+                <taxiC2Y2>1175</taxiC2Y2>
+            </taxiC2>
+
+            <taxiC3>
+                <taxiC3X1>7077</taxiC3X1>
+                <taxiC3X2>7076</taxiC3X2>
+
+                <taxiC3Y1>2926</taxiC3Y1>
+                <taxiC3Y2>1740</taxiC3Y2>
+            </taxiC3>
+
+            <taxiQ>
+                <taxiQX1>2052</taxiQX1>
+                <taxiQX2>2555</taxiQX2>
+
+                <taxiQY1>5846</taxiQY1>
+                <taxiQY2>6274</taxiQY2>
+            </taxiQ>
+
+            <taxiH>
+                <taxiHX1>3521</taxiHX1>
+                <taxiHX2>4006</taxiHX2>
+
+                <taxiHY1>4362</taxiHY1>
+                <taxiHY2>4810</taxiHY2>
+            </taxiH>
+
+            <taxiP>
+                <taxiPX1>4933</taxiPX1>
+                <taxiPX2>4664</taxiPX2>
+
+                <taxiPY1>3912</taxiPY1>
+                <taxiPY2>3646</taxiPY2>
+            </taxiP>
+
+            <taxiB>
+                <taxiBX1>8016</taxiBX1>
+                <taxiBX2>8017</taxiBX2>
+
+                <taxiBY1>540</taxiBY1>
+                <taxiBY2>1271</taxiBY2>
+            </taxiB>
+
+            <taxiA>
+                <taxiAX1>8792</taxiAX1>
+                <taxiAX2>8793</taxiAX2>
+
+                <taxiAY1>1313</taxiAY1>
+                <taxiAY2>548</taxiAY2>
+            </taxiA>
+
+        </PathDefs>
+    </MapUtils>
+
+</DLCConstants>
