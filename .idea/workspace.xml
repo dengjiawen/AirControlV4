@@ -41,17 +41,13 @@
       <file leaf-file-name="Intersection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="303" column="86" selection-start-line="303" selection-start-column="86" selection-end-line="303" selection-end-column="86" />
+            <state relative-caret-position="130">
+              <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="method#Intersection#0;class#Intersection#0" />
                 <element signature="method#getPaths#0;class#Intersection#0" />
                 <element signature="method#equals#0;class#Intersection#0" />
-                <element signature="method#intersects#0;class#Intersection#0" />
-                <element signature="method#getNextNode#0;class#Intersection#0" />
                 <element signature="method#getJumpPoint#0;class#Intersection#0" />
-                <element signature="method#updateNode#0;class#Intersection#0" />
                 <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
                 <element signature="method#mustTurn#0;class#Intersection#0" />
                 <element signature="method#getAlternativePath#0;class#Intersection#0" />
@@ -546,12 +542,12 @@
       <workItem from="1528752342364" duration="699000" />
       <workItem from="1528821807112" duration="3865000" />
       <workItem from="1528831914125" duration="320000" />
-      <workItem from="1528833283351" duration="19538000" />
+      <workItem from="1528833283351" duration="20016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155900000" />
+    <option name="totallyTimeSpent" value="156378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -567,11 +563,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1060,17 +1056,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="303" column="86" selection-start-line="303" selection-start-column="86" selection-end-line="303" selection-end-column="86" />
+        <state relative-caret-position="130">
+          <caret line="111" column="41" selection-start-line="111" selection-start-column="41" selection-end-line="111" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Intersection#0;class#Intersection#0" />
             <element signature="method#getPaths#0;class#Intersection#0" />
             <element signature="method#equals#0;class#Intersection#0" />
-            <element signature="method#intersects#0;class#Intersection#0" />
-            <element signature="method#getNextNode#0;class#Intersection#0" />
             <element signature="method#getJumpPoint#0;class#Intersection#0" />
-            <element signature="method#updateNode#0;class#Intersection#0" />
             <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
             <element signature="method#mustTurn#0;class#Intersection#0" />
             <element signature="method#getAlternativePath#0;class#Intersection#0" />

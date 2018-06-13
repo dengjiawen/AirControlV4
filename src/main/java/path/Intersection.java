@@ -11,7 +11,8 @@
  * -----------------------------------------------------------------------------
  * Intersection.java
  * -----------------------------------------------------------------------------
- * This is a class containing the Intersection object.
+ * This is a class containing the Intersection object. It is placed at the
+ * point of intersection of two lines.
  * <p>
  * This class is a part of the AssistLogic.
  * -----------------------------------------------------------------------------
@@ -29,17 +30,24 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Intersection extends Node implements Serializable {
 
-    static final int tolerance = (int) (LinearUtils.point_intervals * 0.1);
+    static final int tolerance = (int) (LinearUtils.point_intervals * 0.1); // tolerance for updating and placing nodes
 
-    private Paths[] paths;
-    private Node[] next_nodes;
-    private Node[] prev_nodes;
+    private Paths[] paths;      // a list of paths that meet at this intersection
+    private Node[] next_nodes;  // a list of next jump nodes that originate from this intersection
+    private Node[] prev_nodes;  // a list of prev jump nodes that originate from this intersection
 
-    private ArrayList<Paths> must_turn_paths;
-    private ArrayList<Boolean> must_turn_reverse_booleans;
+    private ArrayList<Paths> must_turn_paths;               // a list of paths at which the plane MUST turn
+    private ArrayList<Boolean> must_turn_reverse_booleans;  // a list of booleans that correspond to the prev. arraylist that defines orientation
 
+    /**
+     * Constructor
+     *
+     * @param point Intersection position
+     * @param paths Intersecting paths
+     */
     public Intersection(Point2D point, Paths[] paths) {
 
+        /* instantiate instance variables */
         super(point, null, null);
         this.paths = paths;
         this.next_nodes = new Node[paths.length];
@@ -52,28 +60,57 @@ public class Intersection extends Node implements Serializable {
 
     }
 
+    /**
+     * Method that returns all of the intersecting
+     * path of this intersection.
+     *
+     * @return list of paths
+     */
     public Paths[] getPaths() {
 
-        return paths;// Fred needs to stop being mean, like if you agree
+        return paths;
 
     }
 
+    /**
+     * Method that returns a boolean indicating if
+     * two intersections are equal to one another.
+     *
+     * @param intersection comparison intersection
+     * @return boolean of whether intersections are equal
+     */
     public boolean equals(Intersection intersection) {
 
+        /* check x and y value */
         return getX() == intersection.getX() && getY() == intersection.getY();
 
     }
 
+    /**
+     * Method that checks to see if a path is contained
+     * in this intersection.
+     *
+     * @param path path to be checked
+     * @return boolean of whether intersection contains path
+     */
     public boolean intersects(Paths path) {
 
+        /* linear search */
         for (Paths p : paths) {
             if (p == path) return true;
-        } // Emma is my wifey <3
+        }
 
-        return false; // But you and Emma are cute together
+        return false;
 
     }
 
+    /**
+     * Method that returns the next node in the list.
+     *
+     * @param active_path   the desired path
+     * @param reverse       whether plane is travelling in opps. dir.
+     * @return  the next node in the list
+     */
     public Node getNextNode(Paths active_path, boolean reverse) {
         for (int i = 0; i < paths.length; i++) {
             if (paths[i] == active_path) {
