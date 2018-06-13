@@ -66,8 +66,6 @@ public class CloudDirector {
             haze_transparency_factor = new_transparency;
         }
 
-        System.out.println(haze_transparency_factor);
-            // I feel bad for Emma
         RenderUtils.invokeRepaint();
 
     }

@@ -26,7 +26,6 @@ public class LauncherTest {
         FontResource.init();
 
         if (!Paths.readTelemetryData()) {
-            System.out.println("READ FAILED");
             MapUtils.init();
             Paths.saveTelemetryData();
         }

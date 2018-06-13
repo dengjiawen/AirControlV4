@@ -28,6 +28,7 @@ package main.java.constants;
 
 import main.java.common.LogUtils;
 
+import javax.swing.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Constants {
@@ -60,8 +61,13 @@ public class Constants {
             LogUtils.printCoreMessage("Constant " + resource_name + " not found in " +
                     "existing constants, will try to load from configuration files.");
 
-            integer_parameters.put(resource_name,
-                    ParseUtils.parseInt(type.getPath(), resource_name));
+            try {
+                integer_parameters.put(resource_name,
+                        ParseUtils.parseInt(type.getPath(), resource_name));
+            } catch (Exception f) {
+                LogUtils.printErrorMessage(f.getMessage());
+                missingResource();
+            }
 
             LogUtils.printCoreMessage("Constant " + resource_name + " found in the " +
                     "configuration files!");
@@ -70,6 +76,13 @@ public class Constants {
 
             return getInt(resource_name, type);
         }
+    }
+
+    private static void missingResource() {
+
+        JOptionPane.showMessageDialog(null, "Cannot find resource files!", "Missing Files", JOptionPane.ERROR_MESSAGE);
+        System.exit(0);
+
     }
 
     /**

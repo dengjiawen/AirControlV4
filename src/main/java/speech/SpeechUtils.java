@@ -63,7 +63,7 @@ public class SpeechUtils {
                 if (!gr.getOtherPossibleResponses().isEmpty()) {
                     output = output + " (" + (String) gr.getOtherPossibleResponses().get(0) + ")";
                 }
-                System.out.println(output);
+
                 command_display.setText("");
                 command_display.setText(this.old_text);
                 command_display.setText(command_display.getText() + output);

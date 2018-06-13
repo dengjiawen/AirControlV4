@@ -13,7 +13,7 @@ public class MapUtils {
     public static Line2D rwy3R = new Line2D.Double(4360, 4032, 8265, 71);
 
     public static Line2D taxiE = new Line2D.Double(2433, 6358, 7177, 1558);
-    public static Line2D taxiD = new Line2D.Double(7395, 1824, 6707, 1142);
+    public static Line2D taxiD = new Line2D.Double(7194, 1625, 6707, 1142);
 
     public static Line2D taxiF = new Line2D.Float(4729, 3107, 6357, 3114);
     public static Line2D taxiF1 = new Line2D.Float(6182, 3167, 7140, 2622);

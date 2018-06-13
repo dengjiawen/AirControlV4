@@ -25,7 +25,7 @@ public enum Paths implements Serializable {
 
     taxiP(MapUtils.taxiP, "TAXIWAY P"), taxiB(MapUtils.taxiB, "TAXIWAY B");
 
-    private static final String MAP_IDENTIFIER = "37eQcBdlTBpUKIG6mYxk";
+    private static final String MAP_IDENTIFIER = "XeSlMhgAsUAw1a1G1sC4";
     private static boolean MAP_UP_TO_DATE;
 
     public transient Color debug_color;
@@ -44,8 +44,6 @@ public enum Paths implements Serializable {
         this.heading = AngleUtils.getAngle(path);
         this.debug_color = new Color((int) (Math.random() * 0x1000000));
 
-        System.out.println(name + ": " + heading); // Fred, you have pretty hands, did you play piano?
-
     }
 
     public Line2D getPath() {
@@ -55,7 +53,6 @@ public enum Paths implements Serializable {
     void setIntersections(Intersection[] intersections) {
 
         this.nodes = new Node[(intersections.length) * 3 + 2];
-        System.out.println(intersections.length);
         for (int i = 0, j = 1; i < intersections.length; i++, j += 3) {
 
             nodes[j] = new Node(
@@ -82,7 +79,6 @@ public enum Paths implements Serializable {
         sortNodeArray(nodes);
         relinkNodes(nodes);
 
-        System.out.println(name);
         for (Node node : nodes) {
             System.out.println("This node: " + node + " | Next node: " + node.getNextNode(false));
         }

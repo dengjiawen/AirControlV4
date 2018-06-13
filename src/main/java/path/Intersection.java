@@ -168,9 +168,6 @@ public class Intersection extends Node implements Serializable { // Unicorns and
             random_path_int = ThreadLocalRandom.current().nextInt(0, paths.length);
         }
 
-        System.out.println("Alternative route, " + paths[random_path_int] + ", " +
-                (getAlternativePathReverse(paths[random_path_int]) ? "reverse" : "forward"));
-
         return paths[random_path_int];
 
     }
@@ -223,12 +220,8 @@ public class Intersection extends Node implements Serializable { // Unicorns and
 
     void setIntersection_specialCaseHandlerMethod_PREV(int intersection_index, int path_index) {
 
-        System.out.println("Needed, " + paths[path_index]);
-
         int replacement_node_index = intersection_index - 1;
         int intersection_index_alpha = intersection_index - 3;
-
-        System.out.println("NODE INDEX, " + intersection_index + ", " + intersection_index_alpha);
 
         Paths target_path = paths[path_index];
 
@@ -257,9 +250,6 @@ public class Intersection extends Node implements Serializable { // Unicorns and
         prev_nodes[path_index] = new_jump_node;
 
         ((Intersection) prev_intersection).setIntersection_specialCaseHandlerMethod_NEXT(intersection_index, target_path, new_prev_jump_node);
-
-        System.out.println(new_jump_node);
-        System.out.println(new_prev_jump_node);
 
     }
 

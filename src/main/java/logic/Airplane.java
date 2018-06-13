@@ -82,8 +82,6 @@ public class Airplane {
 
         director.setTargetPath(path, reverse_after_intersection);
 
-        System.out.println("Received, " + path);
-
     }
 
 }

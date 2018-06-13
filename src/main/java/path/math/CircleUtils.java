@@ -119,8 +119,6 @@ public class CircleUtils {
 
             if (radius < 0) radius = -radius;
 
-            System.out.println("Radius: " + radius);
-
         }
 
         public TurningNodes getNextNode(TurningNodes node) {

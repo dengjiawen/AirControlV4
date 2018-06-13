@@ -23,7 +23,7 @@ public class Neuron {
         this.parent_axon = parent_axon;
 
         this.reverse = reverse;
-            // 3=======================================================================D  Is this yours, Fred?
+
     }
 
 }

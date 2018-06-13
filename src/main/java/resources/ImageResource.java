@@ -10,14 +10,12 @@ public class ImageResource {
     public static BufferedImage map_YUMA_adirs;
 
     public static BufferedImage plane;
-    public static BufferedImage plane_s; // We used to drink milk from boobs, ya know...
+    public static BufferedImage plane_s;
 
     public static BufferedImage white_nav;
     public static BufferedImage red_nav;
     public static BufferedImage green_nav;
     public static BufferedImage red_nav_intense;
-
-    public static BufferedImage haze; // Fred, why are you mean to Shawn. He just wants to sleep with you.
 
     public static BufferedImage[] clouds;
 
@@ -33,8 +31,6 @@ public class ImageResource {
         red_nav = loadImage("/luminence/red.png");
         green_nav = loadImage("/luminence/green.png");
         red_nav_intense = loadImage("/luminence/intense_red.png");
-
-        haze = loadImage("/clouds/haze.png");
 
         clouds = new BufferedImage[6];
         for (int i = 0; i < clouds.length; i++) {

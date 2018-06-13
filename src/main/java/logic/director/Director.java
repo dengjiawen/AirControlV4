@@ -31,6 +31,9 @@ import javax.swing.*;
 
 public abstract class Director {
 
+    /**
+     * Static block to initiate Director constants
+     */
     static {
 
         LogUtils.printGeneralMessage("Initializing Director ADT...");
@@ -58,6 +61,9 @@ public abstract class Director {
      * @param plane Airplane object
      */
     Director(Airplane plane) {
+
+        LogUtils.printGeneralMessage("New Director ADT initiated: " + this + "!");
+
         this.plane = plane;
     }
 
@@ -70,7 +76,7 @@ public abstract class Director {
      * ADT: Method that is called when the director
      * updates the plane's position and angle.
      */
-    public abstract void tickUpdate();
+    abstract void tickUpdate();
 
     /**
      * ADT: Method that starts/initializes the

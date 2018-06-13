@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<AddedDefinitions>
+<AddedConstants>
 
     <DirectorADT>
         <tickLength>40</tickLength>
     </DirectorADT>
 
-</AddedDefinitions>
+    <TaxiDirector>
+        <tolerance>2</tolerance>
+    </TaxiDirector>
+
+</AddedConstants>
