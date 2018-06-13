@@ -20,4 +20,9 @@
         </Lighting>
     </BombardierGlobal7000>
 
+    <MusicUtils>
+        <interval>8000</interval>
+        <musicCount>12</musicCount>
+    </MusicUtils>
+
 </AddedConstants>

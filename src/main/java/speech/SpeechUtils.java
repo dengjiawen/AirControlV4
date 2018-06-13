@@ -51,7 +51,6 @@ public class SpeechUtils {
                     if (this.old_text.contains("(")) {
                         this.old_text = this.old_text.substring(0, this.old_text.indexOf('('));
                     }
-                    System.out.println("Paragraph Line Added");
                     this.old_text = (command_display.getText() + "\n");
                     this.old_text = this.old_text.replace(")", "").replace("( ", "");
                     command_display.setText(this.old_text);

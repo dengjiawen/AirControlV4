@@ -1,3 +1,23 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * MapUtils.java
+ * -----------------------------------------------------------------------------
+ * This is a class containing Line2D references to all of the Paths.
+ * It also keeps a reference to all of the Intersections.
+ * <p>
+ * This class is a part of the AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.path;
 
 import main.java.constants.Definitions;
@@ -9,6 +29,9 @@ import java.util.ArrayList;
 
 public class MapUtils {
 
+    /**
+     * Reference of all Line2D objects for the Paths.
+     */
     static Line2D rwy26 = loadLine("rwy26");
     static Line2D rwy35 = loadLine("rwy35");
     static Line2D rwy3L = loadLine("rwy3L");
@@ -32,17 +55,27 @@ public class MapUtils {
 
     static Line2D taxiA = loadLine("taxiA");
 
+    /**
+     * Reference of all intersecting points.
+     */
     static ArrayList<Intersection> intersections = new ArrayList<>();
 
+    /**
+     * Method that initializes the MapUtils class.
+     */
     public static void init() {
 
+        /* for every path, find all intersections with other paths */
         for (Paths a : Paths.values()) {
             for (Paths b : Paths.values()) {
 
                 Intersection intersection = LinearUtils.findIntersect(a, b);
                 if (intersection != null) {
+
                     int index_of_existing_intersection = 0;
                     boolean intersection_exists = false;
+
+                    /* checks if intersection already exists */
                     for (Intersection i : intersections) {
                         if (i.equals(intersection)) {
                             intersection_exists = true;
@@ -50,6 +83,8 @@ public class MapUtils {
                         }
                     }
 
+                    /* if intersection do not exist, add to list of intersections
+                     * and add the two paths to the intersection for reference */
                     if (!intersection_exists) intersections.add(intersection);
                     else {
                         if (!intersection.intersects(a)) {
@@ -63,6 +98,7 @@ public class MapUtils {
             }
         }
 
+        /* for every path, sort intersection arrays in order */
         for (Paths path : Paths.values()) {
 
             ArrayList<Intersection> path_intersects = new ArrayList<>();
@@ -78,12 +114,18 @@ public class MapUtils {
 
         }
 
-        intersections.forEach(e -> {
-            e.updateNode();
-        });
+        /* update all nodes in the intersection */
+        intersections.forEach(e -> e.updateNode());
 
     }
 
+    /**
+     * Method that sorts the intersection array for each path using selection sort.
+     * It sorts by distance from the first point on the Path (low -> high).
+     * @param intersections intersection array
+     * @param path  the target path
+     * @return  sorted array
+     */
     static Intersection[] sortIntersectArray(Intersection[] intersections, Paths path) {
 
         for (int i = 0; i < intersections.length - 1; i++) {
