@@ -57,7 +57,7 @@ public class CloudDirector {
     public static void recalc_HazeTransparency() {
 
         float new_transparency = -1.2f + (0.9f - Canvas.zoom_factor) * 2 + 0.1f;
-            // Fred is a dumb dumb
+
         if (new_transparency < 0) {
             haze_transparency_factor = 0;
         } else if (new_transparency > 1) {
