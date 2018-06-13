@@ -1,4 +1,25 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * FontResource.java
+ * -----------------------------------------------------------------------------
+ * This classes holds references to all of the custom fonts used in the game.
+ *
+ * This class is a part of CoreResource.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.resources;
+
+import main.java.common.LogUtils;
 
 import java.awt.*;
 import java.io.IOException;
@@ -21,7 +42,12 @@ public class FontResource {
     public static Font command_content;
     public static Font command_hint;
 
+    /**
+     * Method that initializes font resources.
+     */
     public static void init() {
+
+        LogUtils.printGeneralMessage("Initializing font resources.");
 
         regular = loadFont("regular");
         italics = loadFont("italics");
@@ -38,14 +64,20 @@ public class FontResource {
 
     }
 
+    /**
+     * Method that loads font files from a given file path.
+     * @param font_name file path
+     * @return  loaded Font object
+     */
     private static Font loadFont(String font_name) {
 
         try {
+            LogUtils.printGeneralMessage("Attempting to load custom font " + font_name + ".");
             return Font.createFont(Font.TRUETYPE_FONT, FontResource.class.getResourceAsStream(font_directory + font_name + ".ttf"));
         } catch (FontFormatException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
         }
 
         return null;

@@ -110,6 +110,16 @@ public class Airplane {
     }
 
     /**
+     * Method that disables all timers associated with the plane.
+     */
+    public void disablePlane() {
+
+        active_director.stopDirector();
+        light.setAll(false);
+
+    }
+
+    /**
      * Method that returns the speed of the airplane.
      * @return  double, speed
      */

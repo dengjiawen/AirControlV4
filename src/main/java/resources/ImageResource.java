@@ -1,3 +1,23 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * ImageResource.java
+ * -----------------------------------------------------------------------------
+ * This classes holds references to all of the images used in the game.
+ *
+ * This class is a part of CoreResource.
+ * -----------------------------------------------------------------------------
+ */
+
+
 package main.java.resources;
 
 import javax.imageio.ImageIO;
@@ -48,7 +68,7 @@ public class ImageResource {
             e.printStackTrace();
             System.exit(100);
         }
-        return null; // Fardeen loves you too <3  3==D
+        return null;
     }
 
 }

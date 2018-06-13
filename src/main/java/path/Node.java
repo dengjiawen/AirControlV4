@@ -19,6 +19,8 @@
 
 package main.java.path;
 
+import main.java.common.LogUtils;
+
 import java.awt.geom.Point2D;
 
 import java.io.Serializable;
@@ -43,6 +45,8 @@ public class Node extends Point2D implements Serializable {
      */
     protected Node(Point2D p, Node prev_node, Node next_node) {
 
+        LogUtils.printGeneralMessage("New node " + this + " created at " + p + "!");
+
         /* instantiate instance variables */
         setLocation(p);
         this.next_node = next_node;
@@ -52,6 +56,11 @@ public class Node extends Point2D implements Serializable {
 
     }
 
+    /**
+     * Method that returns the next node.
+     * @param reverse   whether plane is travelling in opps. dir.
+     * @return
+     */
     public Node getNextNode(boolean reverse) {
 
         if (!reverse) {
@@ -62,44 +71,80 @@ public class Node extends Point2D implements Serializable {
 
     }
 
-    public void setNextNode(Node next_node) {
+    /**
+     * Method that sets the next node.
+     * @param next_node
+     */
+    void setNextNode(Node next_node) {
         this.next_node = next_node;
     }
 
-    public void setPrevNode(Node prev_node) {
+    /**
+     * Method that sets the previous node.
+     * @param prev_node
+     */
+    void setPrevNode(Node prev_node) {
         this.prev_node = prev_node;
     }
 
+    /**
+     * Method that returns the node type.
+     * @return  NodeType enum
+     */
     public NodeType getType() {
         return type;
     }
 
+    /**
+     * Method that returns the x pos of the node.
+     * @return double, x pos
+     */
     @Override
     public double getX() {
         return x;
     }
 
+    /**
+     * Method that returns the y pos of the node.
+     * @return double, y pos
+     */
     @Override
     public double getY() {
         return y;
     }
 
+    /**
+     * Method that sets the location of the node.
+     * @param p the point, new pos
+     */
     @Override
     public void setLocation(Point2D p) {
         this.x = (float) p.getX();
         this.y = (float) p.getY();
     }
 
+    /**
+     * Method that sets the location of the node.
+     * @param x x pos, new pos
+     * @param y y pos, new pos
+     */
     @Override
     public void setLocation(double x, double y) {
         this.x = (float) x;
         this.y = (float) y;
     }
 
+    /**
+     * Overriden toString method.
+     * @return  String representation of object
+     */
     public String toString() {
         return super.toString() + " " + getX() + ", " + getY();
     }
 
+    /**
+     * Enumerated type defining the type of node.
+     */
     public enum NodeType implements Serializable {
 
         REGULAR_NODE, INTERSECTION
