@@ -29,11 +29,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CommandUtils.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommandUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            <state relative-caret-position="294">
+              <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,23 +57,11 @@
       <file leaf-file-name="RefUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/RefUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="-269">
+              <caret selection-end-line="17" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageResource.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,7 +139,6 @@
         <option value="$PROJECT_DIR$/.idea/uiDesigner.xml" />
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/CommandUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Canvas.java" />
         <option value="$PROJECT_DIR$/src/main/java/LauncherTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/FrostedPane.java" />
@@ -182,9 +173,10 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/PathFinder.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Airplane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/RefUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/FontResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/ImageResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/FontResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/RefUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/CommandUtils.java" />
       </list>
     </option>
   </component>
@@ -531,16 +523,15 @@
       <workItem from="1528752342364" duration="699000" />
       <workItem from="1528821807112" duration="3865000" />
       <workItem from="1528831914125" duration="320000" />
-      <workItem from="1528833283351" duration="17003000" />
+      <workItem from="1528833283351" duration="17556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153365000" />
+    <option name="totallyTimeSpent" value="153918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -552,11 +543,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -987,13 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/math/AngleUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1040,18 +1024,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/FontResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="18" />
+        <state relative-caret-position="733">
+          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/RefUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="326">
+          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="80" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1059,12 +1043,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/RefUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="-269">
+          <caret selection-end-line="17" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

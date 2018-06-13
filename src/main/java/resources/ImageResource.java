@@ -20,6 +20,8 @@
 
 package main.java.resources;
 
+import main.java.common.LogUtils;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -39,8 +41,13 @@ public class ImageResource {
 
     public static BufferedImage[] clouds;
 
+    /**
+     * Method that initializes image resources.
+     */
     public static void init() {
-            // Freddy Deng - the dog licker
+
+        LogUtils.printGeneralMessage("Initializing image resources.");
+
         map_YUMA_airport = loadImage("/map/YUMA_airport_base.jpg");
         map_YUMA_adirs = loadImage("/map/YUMA_ADIRS.png");
 
@@ -59,13 +66,18 @@ public class ImageResource {
 
     }
 
+    /**
+     * Method that loads image files from a given file path.
+     * @param res_path file path
+     * @return  loaded BufferedImage object
+     */
     private static BufferedImage loadImage(String res_path) {
-            // Shawn loves you. Very much.
+
         try {
+            LogUtils.printGeneralMessage("Attempting to load image resource " + res_path + ".");
             return ImageIO.read(ImageResource.class.getResource(res_path));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Resources are missing. " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
             System.exit(100);
         }
         return null;

@@ -30,7 +30,10 @@ public class RefUtils {
     public static ConcurrentHashMap<Integer, Airplane> planes;
     static int current_index_planes = 0;
 
-    public static void init () {
+    /**
+     * Method that initializes the references.
+     */
+    public static void init() {
 
         planes = new ConcurrentHashMap<>();
 
@@ -40,8 +43,11 @@ public class RefUtils {
 
     }
 
-
-    public static void respawn (Paths target_path) {
+    /**
+     * Method that respawns the plane at a different path.
+     * @param target_path
+     */
+    public static void respawn(Paths target_path) {
 
         planes.get(current_index_planes - 1).disablePlane();
         LogUtils.printGeneralMessage("Airplane object " + planes.get(current_index_planes - 1) + " is about to be removed.");

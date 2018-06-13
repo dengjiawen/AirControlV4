@@ -21,6 +21,7 @@ package main.java.resources;
 
 import main.java.common.LogUtils;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
@@ -76,8 +77,12 @@ public class FontResource {
             return Font.createFont(Font.TRUETYPE_FONT, FontResource.class.getResourceAsStream(font_directory + font_name + ".ttf"));
         } catch (FontFormatException e) {
             LogUtils.printErrorMessage(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Resources are missing. " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(100);
         } catch (IOException e) {
             LogUtils.printErrorMessage(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Resources are missing. " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(100);
         }
 
         return null;
