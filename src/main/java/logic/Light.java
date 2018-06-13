@@ -1,8 +1,5 @@
 package main.java.logic;
 
-import main.java.common.ThreadUtils;
-import main.java.path.Paths;
-import main.java.resources.ImageResource;
 import main.java.ui.RenderUtils;
 
 import javax.swing.*;

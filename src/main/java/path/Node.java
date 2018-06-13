@@ -13,8 +13,6 @@ public class Node extends Point2D implements Serializable {
 
     protected NodeType type;
 
-    private Paths path;
-
     protected Node(Point2D p, Node prev_node, Node next_node) {
 
         setLocation(p);
