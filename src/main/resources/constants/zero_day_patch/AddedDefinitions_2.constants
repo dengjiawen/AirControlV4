@@ -10,4 +10,8 @@
         <tickLength>50</tickLength>
     </Cloud>
 
+    <LinearUtils>
+        <pointIntervals>100</pointIntervals>
+    </LinearUtils>
+
 </AddedConstants>

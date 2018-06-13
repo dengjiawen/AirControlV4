@@ -29,43 +29,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CommandUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinearUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="86" column="57" selection-start-line="86" selection-start-column="57" selection-end-line="86" selection-end-column="57" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="method#getSlope#0;class#LinearUtils#0" />
+                <element signature="method#getIntercept#0;class#LinearUtils#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AddedDefinitions_2.constants" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CircleUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/path/math/CircleUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-249">
-              <caret line="179" column="65" selection-start-line="179" selection-start-column="65" selection-end-line="179" selection-end-column="65" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="class#TurningNodes#0;class#CircleUtils#0" />
-                <element signature="e#1836#1837#0" expanded="true" />
-                <element signature="e#1890#1891#0" expanded="true" />
-                <element signature="method#TurnEvent#0;class#TurnEvent#0;class#CircleUtils#0" />
-                <element signature="method#calcRadius#0;class#TurnEvent#0;class#CircleUtils#0" />
-                <element signature="e#6391#6392#0" expanded="true" />
-                <element signature="e#6442#6443#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinearUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -165,15 +156,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/path/MapUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -265,15 +247,15 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/Airplane.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CloudDirector.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants" />
-        <option value="$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Cloud.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/math/AngleUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/Launcher.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
-        <option value="$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/Intersection.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/math/CircleUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants" />
+        <option value="$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java" />
       </list>
     </option>
   </component>
@@ -353,22 +335,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="logic" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -379,15 +345,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="logic" type="462c0819:PsiDirectoryNode" />
               <item name="director" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="neural" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
@@ -663,12 +620,12 @@
       <workItem from="1528752342364" duration="699000" />
       <workItem from="1528821807112" duration="3865000" />
       <workItem from="1528831914125" duration="320000" />
-      <workItem from="1528833283351" duration="13992000" />
+      <workItem from="1528833283351" duration="14645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150354000" />
+    <option name="totallyTimeSpent" value="151007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -819,13 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
           <caret line="139" column="96" selection-start-line="139" selection-start-column="96" selection-end-line="139" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="68" selection-start-line="20" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -983,17 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/director/Director.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1028,13 +967,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#getAngle#0;class#AngleUtils#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1089,16 +1021,6 @@
             <element signature="e#4283#4284#0" expanded="true" />
             <element signature="e#4700#4701#0" expanded="true" />
             <element signature="e#4727#4728#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1164,18 +1086,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/math/CircleUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-249">
-          <caret line="179" column="65" selection-start-line="179" selection-start-column="65" selection-end-line="179" selection-end-column="65" />
+        <state relative-caret-position="-1007">
+          <caret line="152" column="104" selection-start-line="152" selection-start-column="104" selection-end-line="152" selection-end-column="104" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="class#TurningNodes#0;class#CircleUtils#0" />
             <element signature="e#1836#1837#0" expanded="true" />
             <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="method#TurnEvent#0;class#TurnEvent#0;class#CircleUtils#0" />
             <element signature="method#calcRadius#0;class#TurnEvent#0;class#CircleUtils#0" />
             <element signature="e#6391#6392#0" expanded="true" />
             <element signature="e#6442#6443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/CommandUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="65" lean-forward="true" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/director/Director.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="69" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="86" column="57" selection-start-line="86" selection-start-column="57" selection-end-line="86" selection-end-column="57" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#getSlope#0;class#LinearUtils#0" />
+            <element signature="method#getIntercept#0;class#LinearUtils#0" />
           </folding>
         </state>
       </provider>

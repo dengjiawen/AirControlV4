@@ -99,6 +99,8 @@ public class CircleUtils {
          */
         public TurnEvent(Paths origin, Paths dest, Intersection intersection, boolean reverse, boolean reverse_after_turning) {
 
+            LogUtils.printGeneralMessage("New TurnEvent object initiated: " + this + "!");
+
             /* instantiate instance variables */
             this.origin = origin;
             this.dest = dest;
@@ -136,6 +138,8 @@ public class CircleUtils {
          */
         private void iteratePath() {
 
+            LogUtils.printGeneralMessage("TurningNode " + this + " iterating arc points.");
+
             double[] coords = new double[6];
 
             /* iterate through segments and create new turning nodes */
@@ -145,6 +149,8 @@ public class CircleUtils {
                 turning_nodes.add(new TurningNodes(new Point2D.Double(coords[0], coords[1]), this));
 
             }
+
+            LogUtils.printGeneralMessage("TurningNode " + this + " iterated " + turning_nodes.size() + " arc points.");
 
         }
 
@@ -179,8 +185,8 @@ public class CircleUtils {
         /**
          * Method that returns the next turning node in the list.
          *
-         * @param node  the current turning node
-         * @return  the next turning node
+         * @param node the current turning node
+         * @return the next turning node
          */
         TurningNodes getNextNode(TurningNodes node) {
 
@@ -199,14 +205,22 @@ public class CircleUtils {
 
         /**
          * Method that returns the first node in the list.
-         * @return
+         *
+         * @return TurningNode, the first node
          */
         public TurningNodes getFirstNode() {
             return turning_nodes.get(0);
         }
 
+        /**
+         * Method that calculates and returns the length
+         * of the turn.
+         *
+         * @return double, turning length
+         */
         public double getTurnLength() {
 
+            /* iterate through nodes array, add distances together */
             double total_distance = 0;
             for (int i = 0; i < turning_nodes.size() - 1; i++) {
                 total_distance += turning_nodes.get(i).distance(turning_nodes.get(i + 1));
@@ -217,7 +231,17 @@ public class CircleUtils {
         }
     }
 
+    /**
+     * Method that calculates and returns the angular difference
+     * between two angles.
+     *
+     * @param a1    angle 1
+     * @param a2    angle 2
+     * @return  double, angular difference
+     */
     private static double getDifference(double a1, double a2) {
+
+        /* return minumum value, limit difference to [0, 360] */
         return Math.min((a1 - a2) < 0 ? a1 - a2 + 360 : a1 - a2, (a2 - a1) < 0 ? a2 - a1 + 360 : a2 - a1);
     }
 

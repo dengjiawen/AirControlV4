@@ -11,8 +11,8 @@
  * -----------------------------------------------------------------------------
  * LinearUtils.java
  * -----------------------------------------------------------------------------
- * This is a class containing methods for performing circle and arc related
- * calculations. This class is mostly used for turn events.
+ * This is a class containing methods for performing calculations on linear
+ * functions.
  * <p>
  * This class is a part of the CoreCalculation.
  * -----------------------------------------------------------------------------
@@ -20,6 +20,9 @@
 
 package main.java.path.math;
 
+import main.java.common.LogUtils;
+import main.java.constants.Constants;
+import main.java.constants.Definitions;
 import main.java.path.Intersection;
 import main.java.path.Paths;
 
@@ -29,26 +32,60 @@ import java.util.ArrayList;
 
 public class LinearUtils {
 
-    public final static int point_intervals = 100;
+    static {
 
-    public static double getSlope(Line2D map_path) {
+        LogUtils.printGeneralMessage("Initializing LinearUtils...");
+        point_intervals = Constants.getInt("pointIntervals", Definitions.ZERO_DAY_PATCH_SUPPLEMENTARY);
 
+    }
+
+    public static int point_intervals;  // defines spacing between jump nodes and intersections.
+
+    /**
+     * Method that returns the slope of a line.
+     * @param map_path  the target line
+     * @return  double, slope
+     */
+    private static double getSlope(Line2D map_path) {
+
+        /* using delta y/delta x formula */
         return (map_path.getY1() - map_path.getY2()) / (map_path.getX1() - map_path.getX2());
 
     }
 
-    public static double getIntercept(double m, double x, double y) {
+    /**
+     * Method that returns the intercept of a linear line.
+     * @param m variable coefficient
+     * @param x x value
+     * @param y y value
+     * @return  double, intercept of linear function
+     */
+    private static double getIntercept(double m, double x, double y) {
 
         return y - m * x;
 
     }
 
-    public static Point2D getPoint(double m, double k, double x) {
+    /**
+     * Method that gets a point on the line/function defined by m, k at x.
+     * @param m variable coefficient
+     * @param k x value
+     * @param x y value
+     * @return  Point2D, point on the line
+     */
+    private static Point2D getPoint(double m, double k, double x) {
 
         return new Point2D.Double(x, m * x + k);
 
     }
 
+    /**
+     * Method that gets a jump point around an intersection.
+     * @param intersection  target intersection
+     * @param origin        target line
+     * @param orientation   node before/after intersection (enum)
+     * @return  Point2D, jump node around an intersection
+     */
     public static Point2D getJumpPoint(Intersection intersection, Paths origin, Orientation orientation) {
 
         double m = LinearUtils.getSlope(origin.getPath());
