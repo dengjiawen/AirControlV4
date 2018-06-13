@@ -25,7 +25,7 @@ public enum Paths implements Serializable {
 
     taxiP(MapUtils.taxiP, "TAXIWAY P"), taxiB(MapUtils.taxiB, "TAXIWAY B");
 
-    private static final String MAP_IDENTIFIER = "XeSlMhgAsUAw1a1G3sD5";
+    private static final String MAP_IDENTIFIER = "XfSlMhgAsUAw1aj1G3sD5";
     private static boolean MAP_UP_TO_DATE;
 
     public transient Color debug_color;
