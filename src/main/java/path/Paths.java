@@ -25,7 +25,7 @@ public enum Paths implements Serializable {
 
     taxiP(MapUtils.taxiP, "TAXIWAY P"), taxiB(MapUtils.taxiB, "TAXIWAY B");
 
-    private static final String MAP_IDENTIFIER = "XeSlMhgAsUAw1a1G1sC4";
+    private static final String MAP_IDENTIFIER = "XeSlMhgAsUAw1a1G3sD5";
     private static boolean MAP_UP_TO_DATE;
 
     public transient Color debug_color;
@@ -95,7 +95,7 @@ public enum Paths implements Serializable {
                 if (nodes[j].distance(nodes[0]) < nodes[index].distance(nodes[0])) {
                     index = j;
                 }
-            } // What does Emma see in you? 0-0
+            }
 
             if (index != i) {
                 Node temporary_node = nodes[i];
@@ -103,7 +103,7 @@ public enum Paths implements Serializable {
                 nodes[index] = temporary_node;
             }
 
-        } // Is there anything to see?
+        }
 
     }
 
@@ -150,12 +150,12 @@ public enum Paths implements Serializable {
             if (nodes[i] == target) return i;
         }
 
-        return -1; // Titties.
+        return -1;
 
     }
 
     public double getHeading(boolean reverse) {
-        if (reverse) // Fred, give me more fries D:
+        if (reverse)
             return ((heading + Math.PI > Math.PI) ? heading - Math.PI : heading + Math.PI);
         else
             return heading;
@@ -213,7 +213,7 @@ public enum Paths implements Serializable {
                 path.nodes = nodes;
 
             } catch (FileNotFoundException e) {
-                e.printStackTrace(); // Don't catch errors, catch friends :3
+                e.printStackTrace();
                 return false;
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
@@ -225,7 +225,7 @@ public enum Paths implements Serializable {
 
         }
 
-        return MAP_UP_TO_DATE; // Fred is a construct?????
+        return MAP_UP_TO_DATE;
 
     }
 

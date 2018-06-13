@@ -1,5 +1,6 @@
 main/java/ui/DBrite.class
 main/java/logic/neural/Axon.class
+main/java/Launcher.class
 main/java/logic/neural/Neuron.class
 main/java/logic/Light.class
 main/java/common/LogUtils.class
@@ -45,7 +46,6 @@ main/java/ui/Window$2.class
 main/java/path/MapUtils.class
 main/java/path/math/LinearUtils.class
 main/java/ui/Canvas$1.class
-main/java/LauncherTest.class
 main/java/ui/Window.class
 main/java/resources/ImageResource.class
 main/java/logic/Cloud$1.class

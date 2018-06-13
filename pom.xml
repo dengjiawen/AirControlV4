@@ -46,7 +46,7 @@
                     <manifest>
                         <addClasspath>true</addClasspath>
                         <classpathPrefix>lib/</classpathPrefix>
-                        <mainClass>main.java.LauncherTest</mainClass>
+                        <mainClass>main.java.Launcher</mainClass>
                     </manifest>
                 </archive>
             </configuration>

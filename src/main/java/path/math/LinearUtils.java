@@ -1,3 +1,23 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * LinearUtils.java
+ * -----------------------------------------------------------------------------
+ * This is a class containing methods for performing circle and arc related
+ * calculations. This class is mostly used for turn events.
+ * <p>
+ * This class is a part of the CoreCalculation.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.path.math;
 
 import main.java.path.Intersection;
@@ -45,7 +65,10 @@ public class LinearUtils {
                 break;
         }
 
-        return getPoint(m, k, x);
+        Point2D jump_point = getPoint(m, k, x);
+        if (xIsOnLine(jump_point.getX(), origin.getPath()) && yIsOnLine(jump_point.getY(), origin.getPath())) {
+            return jump_point;
+        } else return new Point2D.Double(0, 0);
 
     }
 

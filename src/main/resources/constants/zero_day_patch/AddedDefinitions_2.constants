@@ -6,4 +6,8 @@
         <tolerance>1</tolerance>
     </TurnDirector>
 
+    <Cloud>
+        <tickLength>50</tickLength>
+    </Cloud>
+
 </AddedConstants>

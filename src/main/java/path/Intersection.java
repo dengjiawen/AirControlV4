@@ -81,7 +81,7 @@ public class Intersection extends Node implements Serializable { // Unicorns and
     static final int tolerance = (int) (LinearUtils.point_intervals * 0.1);
 
     public void updateNode() {
-        // Go, Fred, go!
+
         for (int k = 0; k < paths.length; k++) {
             for (int i = 0; i < paths[k].getNumNodes(); i++) {
                 if (paths[k].getNode(i) == this) {
@@ -97,15 +97,13 @@ public class Intersection extends Node implements Serializable { // Unicorns and
                         prev_nodes[k] = paths[k].getNode(i - 1);
                         if (LinearUtils.point_intervals - this.distance(prev_nodes[k]) > tolerance) {
                             prev_nodes[k] = paths[k].getNode(i - 2);
-                        } // Fred is smart (but mean)
+                        }
                     } catch (ArrayIndexOutOfBoundsException e) {
                         prev_nodes[k] = null;
                     }
                 }
             }
         }
-
-        specialCaseHandlerMethod();
 
         checkMustTurnStatus();
     }
@@ -146,7 +144,7 @@ public class Intersection extends Node implements Serializable { // Unicorns and
             if (must_turn_reverse_booleans.get(
                     must_turn_paths.indexOf(path)) == reverse) {
                 return true;
-            } // Don't mind me.
+            }
         }
 
         return false;

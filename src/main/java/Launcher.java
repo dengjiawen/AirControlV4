@@ -13,7 +13,7 @@ import main.java.resources.ImageResource;
 import main.java.ui.RenderUtils;
 import main.java.ui.Window;
 
-public class LauncherTest {
+public class Launcher {
 
     static {
 
