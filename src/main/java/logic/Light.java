@@ -1,5 +1,7 @@
 package main.java.logic;
 
+import main.java.constants.Constants;
+import main.java.constants.Definitions;
 import main.java.ui.RenderUtils;
 
 import javax.swing.*;
@@ -114,19 +116,19 @@ public class Light {
 
     public void init() {
 
-        wingtip_nav_offset_x = 55;
-        wingtip_nav_offset_y = -27;
+        wingtip_nav_offset_x = Constants.getInt("wingTipOffsetX", Definitions.BOMBARDIER_PATCH);
+        wingtip_nav_offset_y = Constants.getInt("wingTipOffsetY", Definitions.BOMBARDIER_PATCH);
 
-        wingtip_strobe_offset_x = 55;
-        wingtip_strobe_offset_y = -22;
+        wingtip_strobe_offset_x = Constants.getInt("wingTipStrobeOffsetX", Definitions.BOMBARDIER_PATCH);
+        wingtip_strobe_offset_y = Constants.getInt("WingTipStrobeOffsetY", Definitions.BOMBARDIER_PATCH);
 
-        tail_strobe_offset_x = 0;
-        tail_strobe_offset_y = -58;
+        tail_strobe_offset_x = Constants.getInt("tailStrobeOffsetX", Definitions.BOMBARDIER_PATCH);
+        tail_strobe_offset_y = Constants.getInt("tailStrobeOffsetY", Definitions.BOMBARDIER_PATCH);
 
-        top_acl_offset_x = 0;
-        top_acl_offset_y = 40;
+        top_acl_offset_x = Constants.getInt("topACLOffsetX", Definitions.BOMBARDIER_PATCH);
+        top_acl_offset_y = Constants.getInt("topACLOffsetY", Definitions.BOMBARDIER_PATCH);
 
-        plane_median = 0;
+        plane_median = Constants.getInt("planeMedian", Definitions.BOMBARDIER_PATCH);
 
     }
 

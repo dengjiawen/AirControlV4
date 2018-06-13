@@ -32,7 +32,10 @@ public enum Definitions {
 
     /* zero day patch */
     ZERO_DAY_PATCH("/constants/zero_day_patch/AddedDefinitions_1.constants"),
-    ZERO_DAY_PATCH_SUPPLEMENTARY("/constants/zero_day_patch/AddedDefinitions_2.constants");
+    ZERO_DAY_PATCH_SUPPLEMENTARY("/constants/zero_day_patch/AddedDefinitions_2.constants"),
+
+    /* Bombardier patch */
+    BOMBARDIER_PATCH("/constants/bombardier_patch/AddedDefinitions.constants");
 
     private String path;    // path to definition file
 

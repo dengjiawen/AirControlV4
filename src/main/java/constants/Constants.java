@@ -66,7 +66,7 @@ public class Constants {
                         ParseUtils.parseInt(type.getPath(), resource_name));
             } catch (Exception f) {
                 LogUtils.printErrorMessage(f.getMessage());
-                missingResource();
+                missingResource(type.getPath());
             }
 
             LogUtils.printCoreMessage("Constant " + resource_name + " found in the " +
@@ -78,9 +78,9 @@ public class Constants {
         }
     }
 
-    private static void missingResource() {
+    private static void missingResource(String path) {
 
-        JOptionPane.showMessageDialog(null, "Cannot find resource files!", "Missing Files", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Cannot find resource files for " + path + "!", "Missing Files", JOptionPane.ERROR_MESSAGE);
         System.exit(0);
 
     }

@@ -19,6 +19,7 @@
 
 package main.java.logic;
 
+import main.java.common.LogUtils;
 import main.java.path.Paths;
 import main.java.ui.Canvas;
 import main.java.ui.RenderUtils;
@@ -26,11 +27,12 @@ import main.java.ui.RenderUtils;
 public class CommandUtils {
 
     /**
-     * This class converts String command into text.
+     * Method that converts String command into text.
      * @param command
      */
     public static void TEST_CODE(String command) {
 
+        /* debug control */
         if (command.toUpperCase().contains("DEBUG ON")) {
             Canvas.debug = true;
             RenderUtils.invokeRepaint();
@@ -39,23 +41,36 @@ public class CommandUtils {
             RenderUtils.invokeRepaint();
         }
 
+        /* check if a path had been mentioned in the command */
         Paths mentioned_path = searchPath(command);
         if (mentioned_path != null) {
 
+            /* process turning commands */
             if (command.toUpperCase().contains("TURN")) {
                 boolean reverse_after_intersection = command.toUpperCase().contains("REVERSE");
                 RefUtils.planes.get(RefUtils.current_index_planes - 1).instructToTurnAtPath(mentioned_path, reverse_after_intersection);
                 RenderUtils.invokeRepaint();
+
+                /* process respawning commands */
             } else if (command.toUpperCase().contains("RESPAWN")) {
                 RefUtils.respawn(mentioned_path);
             }
 
         }
 
+        LogUtils.printGeneralMessage("Incoming command \"" + command + "\" had been processed.");
+
+
     }
 
+    /**
+     * Method that searches path for name matches.
+     * @param command
+     * @return  matching path
+     */
     private static Paths searchPath(String command) {
 
+        /* search to see if any path name matches the name mentioned in the command */
         for (Paths path : Paths.values()) {
             if (command.toUpperCase().contains(path.getName())) {
                 return path;
