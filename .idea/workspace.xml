@@ -41,25 +41,31 @@
       <file leaf-file-name="Intersection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+            <state relative-caret-position="551">
+              <caret line="303" column="86" selection-start-line="303" selection-start-column="86" selection-end-line="303" selection-end-column="86" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="method#Intersection#0;class#Intersection#0" />
                 <element signature="method#getPaths#0;class#Intersection#0" />
                 <element signature="method#equals#0;class#Intersection#0" />
                 <element signature="method#intersects#0;class#Intersection#0" />
                 <element signature="method#getNextNode#0;class#Intersection#0" />
                 <element signature="method#getJumpPoint#0;class#Intersection#0" />
+                <element signature="method#updateNode#0;class#Intersection#0" />
+                <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
+                <element signature="method#mustTurn#0;class#Intersection#0" />
                 <element signature="method#getAlternativePath#0;class#Intersection#0" />
                 <element signature="method#getAlternativePathReverse#0;class#Intersection#0" />
                 <element signature="method#haveMustTurn#0;class#Intersection#0" />
                 <element signature="method#addPath#0;class#Intersection#0" />
+                <element signature="method#containsPath#0;class#Intersection#0" />
+                <element signature="method#getNumPaths#0;class#Intersection#0" />
                 <element signature="method#specialCaseHandlerMethod#0;class#Intersection#0" />
                 <element signature="method#setIntersection_specialCaseHandlerMethod_PREV#0;class#Intersection#0" />
                 <element signature="method#setIntersection_specialCaseHandlerMethod_NEXT#0;class#Intersection#0" />
                 <element signature="method#evaluateNeedForHandlerMethod_PREV#0;class#Intersection#0" />
-                <element signature="method#containsPath#0;class#Intersection#0" />
-                <element signature="method#getNumPaths#0;class#Intersection#0" />
+                <element signature="method#getRandomPath#0;class#Intersection#0" />
+                <element signature="method#getRandomReverseBooleanForPath#0;class#Intersection#0" />
               </folding>
             </state>
           </provider>
@@ -79,15 +85,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="56" selection-start-line="56" selection-end-line="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIDefinitions.constants" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -186,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Launcher.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
-        <option value="$PROJECT_DIR$/src/main/java/path/Intersection.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/math/CircleUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants" />
         <option value="$PROJECT_DIR$/src/main/java/path/math/LinearUtils.java" />
@@ -202,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/constants/bombardier_patch/AddedDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Light.java" />
         <option value="$PROJECT_DIR$/src/main/java/music/MusicUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/path/Intersection.java" />
       </list>
     </option>
   </component>
@@ -549,12 +546,12 @@
       <workItem from="1528752342364" duration="699000" />
       <workItem from="1528821807112" duration="3865000" />
       <workItem from="1528831914125" duration="320000" />
-      <workItem from="1528833283351" duration="19145000" />
+      <workItem from="1528833283351" duration="19538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155507000" />
+    <option name="totallyTimeSpent" value="155900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -599,7 +596,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="25" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -607,41 +604,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/MusicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SpeechTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ZoomTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/DBrite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="68" column="77" selection-start-line="68" selection-start-column="77" selection-end-line="68" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -652,13 +614,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/compiler.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="139" column="96" selection-start-line="139" selection-start-column="96" selection-end-line="139" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/classes/constants/CoreDefinitions.constants" />
     <entry file="file://$PROJECT_DIR$/src/main/java/common/BlurUtils.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -672,13 +627,6 @@
             <element signature="method#getFilteredValue#0;class#BlurUtils#0" />
             <element signature="method#sum#0;class#BlurUtils#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/FrostedPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="47" column="86" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -785,16 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Cloud.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="82" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,13 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -1030,6 +961,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/MapUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/music/MusicUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1040,17 +978,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/bombardier_patch/AddedDefinitions.constants">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/Cloud.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="26" />
+        <state>
+          <caret selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/MapUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1061,27 +1002,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="68" column="77" selection-start-line="68" selection-start-column="77" selection-end-line="68" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/RenderUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/FrostedPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="47" column="86" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/DBrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/CommandPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="139" column="96" selection-start-line="139" selection-start-column="96" selection-end-line="139" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ADIRS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/bombardier_patch/AddedDefinitions.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        <state relative-caret-position="551">
+          <caret line="303" column="86" selection-start-line="303" selection-start-column="86" selection-end-line="303" selection-end-column="86" />
           <folding>
+            <element signature="n#!!doc" expanded="true" />
             <element signature="method#Intersection#0;class#Intersection#0" />
             <element signature="method#getPaths#0;class#Intersection#0" />
             <element signature="method#equals#0;class#Intersection#0" />
             <element signature="method#intersects#0;class#Intersection#0" />
             <element signature="method#getNextNode#0;class#Intersection#0" />
             <element signature="method#getJumpPoint#0;class#Intersection#0" />
+            <element signature="method#updateNode#0;class#Intersection#0" />
+            <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
+            <element signature="method#mustTurn#0;class#Intersection#0" />
             <element signature="method#getAlternativePath#0;class#Intersection#0" />
             <element signature="method#getAlternativePathReverse#0;class#Intersection#0" />
             <element signature="method#haveMustTurn#0;class#Intersection#0" />
             <element signature="method#addPath#0;class#Intersection#0" />
+            <element signature="method#containsPath#0;class#Intersection#0" />
+            <element signature="method#getNumPaths#0;class#Intersection#0" />
             <element signature="method#specialCaseHandlerMethod#0;class#Intersection#0" />
             <element signature="method#setIntersection_specialCaseHandlerMethod_PREV#0;class#Intersection#0" />
             <element signature="method#setIntersection_specialCaseHandlerMethod_NEXT#0;class#Intersection#0" />
             <element signature="method#evaluateNeedForHandlerMethod_PREV#0;class#Intersection#0" />
-            <element signature="method#containsPath#0;class#Intersection#0" />
-            <element signature="method#getNumPaths#0;class#Intersection#0" />
+            <element signature="method#getRandomPath#0;class#Intersection#0" />
+            <element signature="method#getRandomReverseBooleanForPath#0;class#Intersection#0" />
           </folding>
         </state>
       </provider>

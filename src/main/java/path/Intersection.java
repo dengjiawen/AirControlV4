@@ -1,20 +1,39 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Intersection.java
+ * -----------------------------------------------------------------------------
+ * This is a class containing the Intersection object.
+ * <p>
+ * This class is a part of the AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.path;
 
 import main.java.path.math.LinearUtils;
 
 import java.awt.geom.Point2D;
 import java.io.Serializable;
-import java.nio.file.Path;
+
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Intersection extends Node implements Serializable { // Unicorns and rainbows
+public class Intersection extends Node implements Serializable {
+
+    static final int tolerance = (int) (LinearUtils.point_intervals * 0.1);
 
     private Paths[] paths;
     private Node[] next_nodes;
     private Node[] prev_nodes;
-
-    private Node[] exceptions;
 
     private ArrayList<Paths> must_turn_paths;
     private ArrayList<Boolean> must_turn_reverse_booleans;
@@ -31,7 +50,7 @@ public class Intersection extends Node implements Serializable { // Unicorns and
 
         this.type = NodeType.INTERSECTION;
 
-    } // Emma is pretty :)
+    }
 
     public Paths[] getPaths() {
 
@@ -77,8 +96,6 @@ public class Intersection extends Node implements Serializable { // Unicorns and
         return null;
 
     }
-
-    static final int tolerance = (int) (LinearUtils.point_intervals * 0.1);
 
     public void updateNode() {
 
@@ -201,6 +218,27 @@ public class Intersection extends Node implements Serializable { // Unicorns and
 
     }
 
+    public boolean containsPath(Paths path) { // Shawn's a hoe
+
+        for (int i = 0; i < paths.length; i++) { // Shawn is going to be a stripper named Furislutty
+            if (paths[i] == path) return true;
+        }
+
+        return false;
+
+    }
+
+    public int getNumPaths() {
+
+        return paths.length;
+
+    }
+
+    /**
+     * The following methods are all WORK IN PROGRESS.
+     * They are not crucial to the functions of the program,
+     * therefore they are disabled and unused.
+     */
     void specialCaseHandlerMethod() {
 
         for (int k = 0; k < paths.length; k++) {
@@ -264,28 +302,12 @@ public class Intersection extends Node implements Serializable { // Unicorns and
     }
 
     boolean evaluateNeedForHandlerMethod_PREV(int intersection_index, int path_index) {
-            // 'Ello there
+
         try {
             return paths[path_index].getNode(intersection_index - 3).distance(this) < 2 * LinearUtils.point_intervals;
         } catch (IndexOutOfBoundsException e) {
             return false;
         }
-
-    }
-
-    public boolean containsPath(Paths path) { // Shawn's a hoe
-
-        for (int i = 0; i < paths.length; i++) { // Shawn is going to be a stripper named Furislutty
-            if (paths[i] == path) return true;
-        }
-
-        return false;
-
-    }
-
-    public int getNumPaths() {
-
-        return paths.length;
 
     }
 
