@@ -41,15 +41,17 @@
       <file leaf-file-name="Intersection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="287" column="40" selection-start-line="287" selection-start-column="40" selection-end-line="287" selection-end-column="40" />
+            <state relative-caret-position="2985">
+              <caret line="330" selection-start-line="330" selection-end-line="330" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="method#getPaths#0;class#Intersection#0" />
                 <element signature="method#equals#0;class#Intersection#0" />
                 <element signature="method#updateNode#0;class#Intersection#0" />
                 <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
-                <element signature="method#mustTurn#0;class#Intersection#0" />
+                <element signature="method#getAlternativePath#0;class#Intersection#0" />
+                <element signature="method#getAlternativePathReverse#0;class#Intersection#0" />
+                <element signature="method#addPath#0;class#Intersection#0" />
                 <element signature="method#containsPath#0;class#Intersection#0" />
                 <element signature="method#getNumPaths#0;class#Intersection#0" />
                 <element signature="method#specialCaseHandlerMethod#0;class#Intersection#0" />
@@ -66,8 +68,12 @@
       <file leaf-file-name="MapUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/MapUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-949">
-              <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+            <state relative-caret-position="368">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+              <folding>
+                <element signature="method#init#0;class#MapUtils#0" />
+                <element signature="method#sortIntersectArray#0;class#MapUtils#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>heading</find>
       <find>Turn</find>
       <find>new taxi</find>
       <find>af7bc404</find>
@@ -143,6 +148,7 @@
       <find>Assist</find>
       <find>acl_offset</find>
       <find>tolerance</find>
+      <find>public</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -364,7 +370,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -549,16 +555,15 @@
       <workItem from="1528752342364" duration="699000" />
       <workItem from="1528821807112" duration="3865000" />
       <workItem from="1528831914125" duration="320000" />
-      <workItem from="1528833283351" duration="20564000" />
+      <workItem from="1528833283351" duration="21609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156926000" />
+    <option name="totallyTimeSpent" value="157971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -566,7 +571,7 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2353362" side_tool="true" visible="true" weight="0.32969698" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2353362" side_tool="true" weight="0.32969698" />
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -576,7 +581,7 @@
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info id="UI Designer" order="4" />
@@ -590,6 +595,37 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" sideWeight="0.5135909" weight="0.32969698" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2353362" side_tool="true" visible="true" weight="0.32969698" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.21939394" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4828326" weight="0.32969698" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -797,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/speech/SpeechUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -852,17 +881,6 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#getAngle#0;class#AngleUtils#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1789">
-          <caret line="131" column="49" lean-forward="true" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1047,29 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="287" column="40" selection-start-line="287" selection-start-column="40" selection-end-line="287" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#getPaths#0;class#Intersection#0" />
-            <element signature="method#equals#0;class#Intersection#0" />
-            <element signature="method#updateNode#0;class#Intersection#0" />
-            <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
-            <element signature="method#mustTurn#0;class#Intersection#0" />
-            <element signature="method#containsPath#0;class#Intersection#0" />
-            <element signature="method#getNumPaths#0;class#Intersection#0" />
-            <element signature="method#specialCaseHandlerMethod#0;class#Intersection#0" />
-            <element signature="method#setIntersection_specialCaseHandlerMethod_PREV#0;class#Intersection#0" />
-            <element signature="method#setIntersection_specialCaseHandlerMethod_NEXT#0;class#Intersection#0" />
-            <element signature="method#evaluateNeedForHandlerMethod_PREV#0;class#Intersection#0" />
-            <element signature="method#getRandomPath#0;class#Intersection#0" />
-            <element signature="method#getRandomReverseBooleanForPath#0;class#Intersection#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -1088,10 +1083,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="84" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2985">
+          <caret line="330" selection-start-line="330" selection-end-line="330" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#getPaths#0;class#Intersection#0" />
+            <element signature="method#equals#0;class#Intersection#0" />
+            <element signature="method#updateNode#0;class#Intersection#0" />
+            <element signature="method#checkMustTurnStatus#0;class#Intersection#0" />
+            <element signature="method#getAlternativePath#0;class#Intersection#0" />
+            <element signature="method#getAlternativePathReverse#0;class#Intersection#0" />
+            <element signature="method#addPath#0;class#Intersection#0" />
+            <element signature="method#containsPath#0;class#Intersection#0" />
+            <element signature="method#getNumPaths#0;class#Intersection#0" />
+            <element signature="method#specialCaseHandlerMethod#0;class#Intersection#0" />
+            <element signature="method#setIntersection_specialCaseHandlerMethod_PREV#0;class#Intersection#0" />
+            <element signature="method#setIntersection_specialCaseHandlerMethod_NEXT#0;class#Intersection#0" />
+            <element signature="method#evaluateNeedForHandlerMethod_PREV#0;class#Intersection#0" />
+            <element signature="method#getRandomPath#0;class#Intersection#0" />
+            <element signature="method#getRandomReverseBooleanForPath#0;class#Intersection#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/MapUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-949">
-          <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+        <state relative-caret-position="368">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="method#init#0;class#MapUtils#0" />
+            <element signature="method#sortIntersectArray#0;class#MapUtils#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,30 +7,30 @@ import java.util.ArrayList;
 
 public class MapUtils {
 
-    public static Line2D rwy26 = new Line2D.Double(9369, 576, 5649, 594);
-    public static Line2D rwy35 = new Line2D.Double(6033, 3487, 6017, 145);
-    public static Line2D rwy3L = new Line2D.Double(1719, 6222, 7105, 768);
-    public static Line2D rwy3R = new Line2D.Double(4360, 4032, 8265, 71);
+    static Line2D rwy26 = new Line2D.Double(9369, 576, 5649, 594);
+    static Line2D rwy35 = new Line2D.Double(6033, 3487, 6017, 145);
+    static Line2D rwy3L = new Line2D.Double(1719, 6222, 7105, 768);
+    static Line2D rwy3R = new Line2D.Double(4360, 4032, 8265, 71);
 
-    public static Line2D taxiE = new Line2D.Double(2433, 6358, 7177, 1558);
-    public static Line2D taxiD = new Line2D.Double(7194, 1625, 6707, 1142);
+    static Line2D taxiE = new Line2D.Double(2433, 6358, 7177, 1558);
+    static Line2D taxiD = new Line2D.Double(7194, 1625, 6707, 1142);
 
-    public static Line2D taxiF = new Line2D.Float(4729, 3107, 6357, 3114);
-    public static Line2D taxiF1 = new Line2D.Float(6182, 3167, 7140, 2622);
+    static Line2D taxiF = new Line2D.Float(4729, 3107, 6357, 3114);
+    static Line2D taxiF1 = new Line2D.Float(6182, 3167, 7140, 2622);
 
-    public static Line2D taxiC1 = new Line2D.Float(7600, 1220, 8831, 1221);
-    public static Line2D taxiC2 = new Line2D.Float(6917, 1990, 7735, 1175);
-    public static Line2D taxiC3 = new Line2D.Float(7077, 2926, 7076, 1740);
+    static Line2D taxiC1 = new Line2D.Float(7600, 1220, 8831, 1221);
+    static Line2D taxiC2 = new Line2D.Float(6917, 1990, 7735, 1175);
+    static Line2D taxiC3 = new Line2D.Float(7077, 2926, 7076, 1740);
 
-    public static Line2D taxiQ = new Line2D.Float(2052, 5846, 2555, 6274);
-    public static Line2D taxiH = new Line2D.Float(3521, 4362, 4006, 4810);
-    public static Line2D taxiP = new Line2D.Float(4933, 3912, 4664, 3646);
+    static Line2D taxiQ = new Line2D.Float(2052, 5846, 2555, 6274);
+    static Line2D taxiH = new Line2D.Float(3521, 4362, 4006, 4810);
+    static Line2D taxiP = new Line2D.Float(4933, 3912, 4664, 3646);
 
-    public static Line2D taxiB = new Line2D.Float(8016, 540, 8017, 1271);
+    static Line2D taxiB = new Line2D.Float(8016, 540, 8017, 1271);
 
-    public static Line2D taxiA = new Line2D.Float(8792, 1313, 8793, 548);
+    static Line2D taxiA = new Line2D.Float(8792, 1313, 8793, 548);
 
-    public static ArrayList<Intersection> intersections = new ArrayList<>();
+    static ArrayList<Intersection> intersections = new ArrayList<>();
 
     public static void init() {
 
@@ -82,7 +82,7 @@ public class MapUtils {
 
     }
 
-    public static Intersection[] sortIntersectArray(Intersection[] intersections, Paths path) {
+    static Intersection[] sortIntersectArray(Intersection[] intersections, Paths path) {
 
         for (int i = 0; i < intersections.length - 1; i++) {
 

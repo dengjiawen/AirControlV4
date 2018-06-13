@@ -20,6 +20,7 @@
 
 package main.java.path;
 
+import main.java.common.LogUtils;
 import main.java.path.math.LinearUtils;
 
 import java.awt.geom.Point2D;
@@ -49,6 +50,9 @@ public class Intersection extends Node implements Serializable {
 
         /* instantiate instance variables */
         super(point, null, null);
+
+        LogUtils.printGeneralMessage("New intersection " + this + " created at " + point + "!");
+
         this.paths = paths;
         this.next_nodes = new Node[paths.length];
         this.prev_nodes = new Node[paths.length];
@@ -154,6 +158,8 @@ public class Intersection extends Node implements Serializable {
      */
     public void updateNode() {
 
+        LogUtils.printGeneralMessage("Intersection " + this + " is now updating its nodes.");
+
         /* the purpose of this method is to check if jump nodes are properly placed.
          * it is possible for two neighbouring intersections to have weird jump node
          * arrangements, this method checks to see if the distance between the jump
@@ -183,12 +189,16 @@ public class Intersection extends Node implements Serializable {
 
         /* check must turn status */
         checkMustTurnStatus();
+
+        LogUtils.printGeneralMessage("Intersection " + this + " nodes successfully updated.");
     }
 
     /**
      * Method that checks to see if a plane must turn at a certain path.
      */
     public void checkMustTurnStatus() {
+
+        LogUtils.printGeneralMessage("Intersection " + this + " is now updating its must-turn status.");
 
         /* iterate through list of paths */
         for (Paths path : paths) {
@@ -222,6 +232,8 @@ public class Intersection extends Node implements Serializable {
 
         }
 
+        LogUtils.printGeneralMessage("Intersection " + this + " nodes' must-turn status successfully updated.");
+
     }
 
     /**
@@ -244,9 +256,18 @@ public class Intersection extends Node implements Serializable {
 
     }
 
+    /**
+     * Method that provides an alternative path if the plane must turn.
+     * @param path  the current path of the plane
+     * @return  an alternative path
+     */
     public Paths getAlternativePath(Paths path) {
 
+        LogUtils.printGeneralMessage("Intersection " + this + ": alternative path requested for path " + path + ".");
+
         int path_index = -1;
+
+        /* find index of current path */
         for (int i = 0; i < paths.length; i++) {
             if (paths[i] == path) {
                 path_index = i;
@@ -254,36 +275,69 @@ public class Intersection extends Node implements Serializable {
             }
         }
 
+        /* generate a random number, keep generating until index
+         * number do not equal current index.
+         */
         int random_path_int = path_index;
         while (random_path_int == path_index) {
             random_path_int = ThreadLocalRandom.current().nextInt(0, paths.length);
         }
 
+        LogUtils.printGeneralMessage("Intersection " + this + ": alternative path assigned for path " + path + ": " + paths[random_path_int] + ".");
+
+        /* return random path */
         return paths[random_path_int];
 
     }
 
+    /**
+     * Method that provides the reverse_after_intersection boolean of
+     * the alternative path.
+     * @param alternative_path  the alternative path provided by getAlternativePath()
+     * @return  reverse boolean
+     */
     public boolean getAlternativePathReverse(Paths alternative_path) {
 
+        /* if alternative path is not in the must turn list,
+         * return a random boolean, 50/50.
+         */
         if (!must_turn_paths.contains(alternative_path)) {
             return ThreadLocalRandom.current().nextInt(0, 101) > 50;
         }
 
+        /* else, check the boolean list and return the
+         * opposite as the one on the list.
+         */
         int path_index = must_turn_paths.indexOf(alternative_path);
         return !must_turn_reverse_booleans.get(path_index);
 
     }
 
+    /**
+     * Method that checks to see if the intersection have any path
+     * where it must turn.
+     * @return  boolean
+     */
     public boolean haveMustTurn() {
 
         return !(must_turn_paths.isEmpty() && must_turn_reverse_booleans.isEmpty());
 
     }
 
+    /**
+     * Add a path to the list of paths.
+     * @param path  path to be added
+     */
     public void addPath(Paths path) {
 
+        LogUtils.printGeneralMessage("Intersection " + this + ": request to add a new path " + path + ".");
+
         if (!intersects(path)) {
+
+            /* create new Paths array with an empty spot */
             Paths[] new_array = new Paths[paths.length + 1];
+
+            /* add existing paths, then add new path */
             for (int i = 0; i < paths.length; i++) {
                 new_array[i] = paths[i];
             }
@@ -291,6 +345,8 @@ public class Intersection extends Node implements Serializable {
 
             paths = new_array;
         }
+
+        LogUtils.printGeneralMessage("Intersection " + this + ": new path successfully added.");
 
     }
 
