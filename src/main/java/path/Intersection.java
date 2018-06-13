@@ -107,25 +107,39 @@ public class Intersection extends Node implements Serializable {
     /**
      * Method that returns the next node in the list.
      *
-     * @param active_path   the desired path
-     * @param reverse       whether plane is travelling in opps. dir.
-     * @return  the next node in the list
+     * @param active_path the desired path
+     * @param reverse     whether plane is travelling in opps. dir.
+     * @return the next node in the list
      */
     public Node getNextNode(Paths active_path, boolean reverse) {
+
+        /* find the target path */
         for (int i = 0; i < paths.length; i++) {
             if (paths[i] == active_path) {
+
+                /* return next or prev node depending on orientation */
                 if (!reverse) return next_nodes[i];
-                else return prev_nodes[i]; // Be nice to Emma
+                else return prev_nodes[i];
             }
         }
 
         return null;
     }
 
+    /**
+     * Method that returns a jump point.
+     *
+     * @param path      target path
+     * @param reverse   orientation of the plane.
+     * @return
+     */
     public Node getJumpPoint(Paths path, boolean reverse) {
 
+        /* find the target path */
         for (int i = 0; i < paths.length; i++) {
             if (paths[i] == path) {
+
+                /* return the prev or the next node depending on orientation (opposite to getNextNode()) */
                 return (reverse) ? prev_nodes[i] : next_nodes[i];
             }
         }
@@ -134,8 +148,16 @@ public class Intersection extends Node implements Serializable {
 
     }
 
+    /**
+     * Method that reorganizes the node references, and check
+     * for must turn statuses.
+     */
     public void updateNode() {
 
+        /* the purpose of this method is to check if jump nodes are properly placed.
+         * it is possible for two neighbouring intersections to have weird jump node
+         * arrangements, this method checks to see if the distance between the jump
+         * nodes and the intersection matches the tolerance. */
         for (int k = 0; k < paths.length; k++) {
             for (int i = 0; i < paths[k].getNumNodes(); i++) {
                 if (paths[k].getNode(i) == this) {
@@ -159,14 +181,24 @@ public class Intersection extends Node implements Serializable {
             }
         }
 
+        /* check must turn status */
         checkMustTurnStatus();
     }
 
+    /**
+     * Method that checks to see if a plane must turn at a certain path.
+     */
     public void checkMustTurnStatus() {
 
+        /* iterate through list of paths */
         for (Paths path : paths) {
 
+            /* retrieve current node index */
             int index = path.getNodeIndex(this);
+
+            /* Method checks 3 nodes in either direction.
+             * If the 3rd node is not an intersection, then the
+             * plane must turn at this intersection onto a different path. */
 
             try {
                 if (path.getNode(index + 3).getType() != NodeType.INTERSECTION) {
@@ -192,8 +224,15 @@ public class Intersection extends Node implements Serializable {
 
     }
 
+    /**
+     * Method that returns the must turn status of a given path.
+     * @param path      given path
+     * @param reverse   path orientation
+     * @return  boolean of must turn status
+     */
     public boolean mustTurn(Paths path, boolean reverse) {
 
+        /* if must turn, and orientation match, return true */
         if (must_turn_paths.contains(path)) {
             if (must_turn_reverse_booleans.get(
                     must_turn_paths.indexOf(path)) == reverse) {
@@ -246,8 +285,8 @@ public class Intersection extends Node implements Serializable {
         if (!intersects(path)) {
             Paths[] new_array = new Paths[paths.length + 1];
             for (int i = 0; i < paths.length; i++) {
-                new_array[i] = paths[i]; // Fred has no self esteem
-            }// and no dick too
+                new_array[i] = paths[i];
+            }
             new_array[paths.length] = path;
 
             paths = new_array;
@@ -255,9 +294,18 @@ public class Intersection extends Node implements Serializable {
 
     }
 
-    public boolean containsPath(Paths path) { // Shawn's a hoe
+    /**
+     * Method that returns a boolean of whether
+     * the path exists in the intersection.
+     * DEPRECATED: Use intersects() method instead.
+     * @param path  target path
+     * @return  boolean, whether path exists
+     */
+    @ Deprecated
+    public boolean containsPath(Paths path) {
 
-        for (int i = 0; i < paths.length; i++) { // Shawn is going to be a stripper named Furislutty
+        /* linear search */
+        for (int i = 0; i < paths.length; i++) {
             if (paths[i] == path) return true;
         }
 
@@ -265,6 +313,11 @@ public class Intersection extends Node implements Serializable {
 
     }
 
+    /**
+     * Method that returns the number if paths
+     * contained in this intersection.
+     * @return  int, number of paths
+     */
     public int getNumPaths() {
 
         return paths.length;

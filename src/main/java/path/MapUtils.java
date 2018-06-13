@@ -18,14 +18,9 @@ public class MapUtils {
     public static Line2D taxiF = new Line2D.Float(4729, 3107, 6357, 3114);
     public static Line2D taxiF1 = new Line2D.Float(6182, 3167, 7140, 2622);
 
-//    public static Line2D taxiM = new Line2D.Float(6276, 2448, 6292, 3127);
-//    public static Line2D taxiN = new Line2D.Float(6298, 3088, 6547, 3497);
-
     public static Line2D taxiC1 = new Line2D.Float(7600, 1220, 8831, 1221);
     public static Line2D taxiC2 = new Line2D.Float(6917, 1990, 7735, 1175);
     public static Line2D taxiC3 = new Line2D.Float(7077, 2926, 7076, 1740);
-    public static Line2D taxiC4;
-    public static Line2D taxiC5;
 
     public static Line2D taxiQ = new Line2D.Float(2052, 5846, 2555, 6274);
     public static Line2D taxiH = new Line2D.Float(3521, 4362, 4006, 4810);
@@ -87,7 +82,6 @@ public class MapUtils {
 
     }
 
-    // selection sort
     public static Intersection[] sortIntersectArray(Intersection[] intersections, Paths path) {
 
         for (int i = 0; i < intersections.length - 1; i++) {
