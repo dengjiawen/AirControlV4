@@ -196,18 +196,20 @@ public class TurnDirector extends Director {
      */
     private void calcTickTheta() {
 
+        LogUtils.printGeneralMessage("Director " + this + " is starting a theta recalculation.");
+
+        /* get the total turn distance and the change in heading */
         double total_distance = active_event.getTurnLength();
-
-        //System.out.println("Arc Length: " + total_distance);
-
         double delta_heading = target_heading - current_heading;
 
+        /* correct angle to keep it at [-360, 360] */
         if (delta_heading < -2 * Math.PI) {
             delta_heading += 2 * Math.PI;
         } else if (delta_heading > 2 * Math.PI) {
             delta_heading -= 2 * Math.PI;
         }
 
+        /* do a bunch of fancy trig here to calculate the change in angle per tick */
         if (delta_heading > Math.PI) {
             tick_theta = -(Math.PI * 2 - delta_heading) / ((total_distance / plane.getSpeed()) * 1000 / tick_length);
         } else if (delta_heading < -Math.PI) {
@@ -216,24 +218,37 @@ public class TurnDirector extends Director {
             tick_theta = (delta_heading) / ((total_distance / plane.getSpeed()) * 1000 / tick_length);
         }
 
+        LogUtils.printDebugMessage("Director " + this + " is reporting a tick theta of " + tick_theta + ".");
+
     }
 
+
+    /**
+     * Overriden startDirector method.
+     */
     @Override
     public void startDirector() {
 
-        //System.out.println("Starting director...");
+        LogUtils.printGeneralMessage("Director " + this + " had been started!");
         tick_update.start();
 
     }
 
+    /**
+     * Overriden stopDirector method.
+     */
     @Override
     public void stopDirector() {
 
+        LogUtils.printGeneralMessage("Director " + this + " had been stopped!");
         tick_update.stop();
-        //System.out.println("DIRECTOR STOPPED");
 
     }
 
+    /**
+     * Overriden handOff method.
+     * @param new_director the new director
+     */
     @Override
     public void handOff(Director new_director) {}
 
