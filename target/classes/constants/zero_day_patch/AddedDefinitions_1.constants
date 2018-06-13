@@ -10,4 +10,8 @@
         <tolerance>2</tolerance>
     </TaxiDirector>
 
+    <Airplane>
+        <testSpeed>50</testSpeed>
+    </Airplane>
+
 </AddedConstants>

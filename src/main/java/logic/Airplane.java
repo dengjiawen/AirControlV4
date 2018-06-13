@@ -98,41 +98,72 @@ public class Airplane {
      */
     public void setActiveDirector(Director director) {
 
+        LogUtils.printGeneralMessage("Airplane " + this + " requesting director change from " + active_director + " to " + director + "!");
+
         /* stop old director, hand off and start new director */
         active_director.stopDirector();
         active_director.handOff(director);
         active_director = director;
         active_director.startDirector();
+
+        LogUtils.printGeneralMessage("Airplane " + this + " director change successful!");
     }
 
+    /**
+     * Method that returns the speed of the airplane.
+     * @return  double, speed
+     */
     public double getSpeed() {
         return speed;
     }
 
+    /**
+     * Method that returns the X coord of the airplane.
+     * @return  double, x pos
+     */
     public double getX() {
         return position.getX();
     }
 
+    /**
+     * Method that returns the Y coord of the airplane.
+     * @return  double, y pos
+     */
     public double getY() {
         return position.getY();
     }
 
+    /**
+     * Method that returns the Light object of the airplane.
+     * @return  Light object
+     */
     public Light getLight() {
 
         return light;
 
     }
 
-    public void instructToTurnAtPath (Paths path, boolean reverse_after_intersection) {
+    /**
+     * Method that instructs the airplane to turn at a certain path.
+     * @param path  the path to turn
+     * @param reverse_after_intersection    whether to reverse after intersection
+     */
+    void instructToTurnAtPath (Paths path, boolean reverse_after_intersection) {
 
+        LogUtils.printGeneralMessage("Airplane " + this + " received turning instruction to " + path + ".");
+
+        /* check if plane is taxing */
         TaxiDirector director;
         try {
             director = (TaxiDirector) active_director;
         } catch (ClassCastException e) {
-            //e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
+            LogUtils.printErrorMessage("Airplane " + this + " failed to execute turning instruction. Reason: already turning.");
             return;
         }
 
+        /* if plane is taxing, set the target path of the director */
+        LogUtils.printGeneralMessage("Airplane " + this + " successfully executed turning instruction to " + path + "!");
         director.setTargetPath(path, reverse_after_intersection);
 
     }
