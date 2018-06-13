@@ -36,7 +36,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Cloud {
 
     /**
-     * Static block to initiate Director constants
+     * Static block to initiate cloud constants
      */
     static {
 
@@ -75,7 +75,7 @@ public class Cloud {
             position.setLocation(position.getX(), position.getY() - 1);
 
             // if cloud is out of bound, remove cloud
-            if (position.getY() < -500) CloudDirector.removeCloud(this);
+            if (position.getY() < - 3000) CloudDirector.removeCloud(this);
 
             // invoke repaint
             RenderUtils.invokeRepaint();

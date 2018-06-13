@@ -20,6 +20,7 @@
 
 package main.java.path;
 
+import main.java.common.LogUtils;
 import main.java.constants.Definitions;
 import main.java.constants.ParseUtils;
 import main.java.path.math.LinearUtils;
@@ -65,12 +66,18 @@ public class MapUtils {
      */
     public static void init() {
 
+        LogUtils.printGeneralMessage("Initializing MapUtils!");
+
         /* for every path, find all intersections with other paths */
         for (Paths a : Paths.values()) {
             for (Paths b : Paths.values()) {
 
+                LogUtils.printGeneralMessage("MapUtils: Now finding intersections between " + a + " and " + b + ".");
+
                 Intersection intersection = LinearUtils.findIntersect(a, b);
                 if (intersection != null) {
+
+                    LogUtils.printDebugMessage("MapUtils: intersection found at " + intersection + "!");
 
                     int index_of_existing_intersection = 0;
                     boolean intersection_exists = false;
@@ -78,6 +85,9 @@ public class MapUtils {
                     /* checks if intersection already exists */
                     for (Intersection i : intersections) {
                         if (i.equals(intersection)) {
+
+                            LogUtils.printGeneralMessage("MapUtils: intersection " + intersection + "is duplicate. Ditching.");
+
                             intersection_exists = true;
                             index_of_existing_intersection = intersections.indexOf(i);
                         }
@@ -120,20 +130,28 @@ public class MapUtils {
     }
 
     /**
-     * Method that sorts the intersection array for each path using selection sort.
-     * It sorts by distance from the first point on the Path (low -> high).
+     * Method that sorts the intersection array for each
+     * path using selection sort.
+     * It sorts by distance from the first point on the
+     * Path (low -> high).
+     *
      * @param intersections intersection array
-     * @param path  the target path
-     * @return  sorted array
+     * @param path          the target path
+     * @return sorted array
      */
     static Intersection[] sortIntersectArray(Intersection[] intersections, Paths path) {
 
+        LogUtils.printGeneralMessage("MapUtils is sorting intersection array " + intersections + " for path " + path + ".");
+
+        /* selection sort the intersections based on the distance to
+         * the first point on the Path */
         for (int i = 0; i < intersections.length - 1; i++) {
 
             int index = i;
 
             for (int j = i + i; j < intersections.length; j++) {
-                if (intersections[j].distance(path.getPath().getP1()) < intersections[index].distance(path.getPath().getP1())) {
+                if (intersections[j].distance(path.getPath().getP1()) <
+                        intersections[index].distance(path.getPath().getP1())) {
                     index = j;
                 }
             }
@@ -150,7 +168,15 @@ public class MapUtils {
 
     }
 
+    /**
+     * Method that loads a line from the definition file.
+     *
+     * @param line_name the name of the Path
+     * @return the parsed Line2D object
+     */
     private static Line2D loadLine(String line_name) {
+
+        LogUtils.printGeneralMessage("MapUtils is loading line " + line_name + ".");
 
         double x1 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "X1");
         double x2 = ParseUtils.parseDouble(Definitions.DLC_1.getPath(), line_name + "X2");

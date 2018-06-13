@@ -1,13 +1,34 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * SpeechUtils.java
+ * -----------------------------------------------------------------------------
+ * This class is a part of CommandUtils used for issuing commands via voice.
+ * It is still WORK IN PROGRESS. This class is still in its testing stages.
+ * <p>
+ * This class is a part of AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.speech;
 
 import com.darkprograms.speech.microphone.Microphone;
 import com.darkprograms.speech.recognizer.GSpeechDuplex;
 import com.darkprograms.speech.recognizer.GSpeechResponseListener;
 import com.darkprograms.speech.recognizer.GoogleResponse;
-import main.java.logic.Airplane;
+
 import main.java.logic.CommandUtils;
 import main.java.resources.FontResource;
 import main.java.ui.CommandPanel;
+
 import net.sourceforge.javaflacencoder.FLACFileWriter;
 
 import javax.swing.*;
@@ -15,11 +36,14 @@ import java.awt.*;
 
 public class SpeechUtils {
 
-    public static JTextField command_display;
+    public static JTextField command_display;   // reference of Command Panel
 
-    private static Microphone mic;
-    static GSpeechDuplex duplex;
+    private static Microphone mic;  // system microphone
+    static GSpeechDuplex duplex;    // connection to Google servers
 
+    /**
+     * Method thats starts a new speech session
+     */
     public static void startSpeechSession () {
 
         command_display.setText("");

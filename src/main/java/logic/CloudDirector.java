@@ -1,30 +1,54 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * CloudDirector.java
+ * -----------------------------------------------------------------------------
+ * This class controls all of the Cloud objects that's currently active.
+ *
+ * This class is a part of AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.logic;
 
 import main.java.ui.Canvas;
 import main.java.ui.RenderUtils;
-import main.java.ui.Window;
-// Fred needs to get new priorities
-import java.awt.geom.Point2D;
+
 import javax.swing.Timer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CloudDirector {
 
-    public static ConcurrentHashMap<Object, Cloud> clouds;
+    public static ConcurrentHashMap<Object, Cloud> clouds;  // hashmap of active Cloud objects
 
-    public static float cloud_transparency_factor;
+    private static Timer cloud_spawning_timer;              // timer that controls the spawn rate of clouds
 
-    private static Timer cloud_spawning_timer;
+    public static float haze_transparency_factor = 0;       // float that controls the transparency of hazing effects
 
-    public static float haze_transparency_factor = 0;
-
+    /**
+     * Method that initializes the CloudDirector
+     */
     public static void init() {
 
+        /* calculate transparency of the haze */
         recalc_HazeTransparency();
+        /* initiate hash map */
         clouds = new ConcurrentHashMap<>();
 
+        /* initiate cloud spawn timer */
         cloud_spawning_timer = new Timer(10000, e -> {
+
+            if (ThreadLocalRandom.current().nextInt(0, 101) > 75) return;
+
             Cloud new_cloud = getRandomCloud();
             if (new_cloud != null) {
                 clouds.put(new Object(), new_cloud);
@@ -49,8 +73,12 @@ public class CloudDirector {
 
     public static void removeCloud(Cloud cloud) {
 
-        clouds.remove(cloud);
         cloud.halt();
+        clouds.forEach((i, c) -> {
+            if (c == cloud) {
+                clouds.remove(i);
+            }
+        });
 
     }
 
