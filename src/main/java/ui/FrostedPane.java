@@ -1,4 +1,20 @@
-
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * FrostedPane.java
+ * -----------------------------------------------------------------------------
+ * This custom JComponent blurs any content painted underneath it on the
+ * canvas.
+ * -----------------------------------------------------------------------------
+ */
 
 package main.java.ui;
 
@@ -14,15 +30,15 @@ import java.util.concurrent.Executors;
 
 public class FrostedPane extends JPanel {
 
-    static ArrayList<FrostedPane> current_active_panes = new ArrayList<>();
+    static ArrayList<FrostedPane> current_active_panes = new ArrayList<>(); // reference of active FrostedPanes for updates
 
     static BufferedImage canvas_image_buffer;
     static BufferedImage canvas_active_image;
 
     static int title_bar_offset = 30;
 
-    ExecutorService blur_daemon;
-    BufferedImage blurred_image;
+    private ExecutorService blur_daemon;
+    private BufferedImage blurred_image;
 
     String name;
 
