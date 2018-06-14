@@ -45,7 +45,9 @@ public class ParseUtils {
      * @param resource_name name of the requested resource
      * @return parsed content (string)
      */
-    public static String parseString(String plist_name, String resource_name) { // Happy, happy, happy
+    public static String parseString(String plist_name, String resource_name) {
+
+        LogUtils.printCoreMessage("ParseUtils: Parsing String " + resource_name + " from " + plist_name + "!");
 
         try {
             Document XMLTree = DocumentBuilderFactory.newInstance().
@@ -74,6 +76,7 @@ public class ParseUtils {
      * @return parsed content (integer)
      */
     public static int parseInt(String plist_name, String resource_name) {
+        LogUtils.printCoreMessage("ParseUtils: Parsing Integer " + resource_name + " from " + plist_name + "!");
         return Integer.parseInt(Objects.requireNonNull(parseString(plist_name, resource_name)));
     }
 
@@ -85,7 +88,8 @@ public class ParseUtils {
      * @param resource_name name of the requested resource
      * @return parsed content (double)
      */
-    public static double parseDouble(String plist_name, String resource_name) { // Fred, why are you giving Shawn consent?
+    public static double parseDouble(String plist_name, String resource_name) {
+        LogUtils.printCoreMessage("ParseUtils: Parsing Double " + resource_name + " from " + plist_name + "!");
         return Double.parseDouble(parseString(plist_name, resource_name));
     }
 

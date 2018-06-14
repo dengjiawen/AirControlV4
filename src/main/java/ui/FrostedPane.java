@@ -22,6 +22,7 @@ import main.java.common.BlurUtils;
 import main.java.common.LogUtils;
 import main.java.constants.Constants;
 import main.java.constants.Definitions;
+import main.java.constants.ParseUtils;
 import main.java.resources.FontResource;
 
 import javax.swing.*;
@@ -96,6 +97,10 @@ public class FrostedPane extends JPanel {
 
     }
 
+    /* constants defining the transparency of the window and title bar material */
+    private static float window_material_transparency = (float)ParseUtils.parseDouble(Definitions.UI_CONSTANTS.getPath(), "windowMaterialTransparency");
+    private static float title_material_transparency = (float)ParseUtils.parseDouble(Definitions.UI_CONSTANTS.getPath(), "titleMaterialTransparency");
+
     /**
      * Overloaded paintComponent method
      * @param g
@@ -120,12 +125,12 @@ public class FrostedPane extends JPanel {
             }
 
             /* set transparency for black window material */
-            g2d.setComposite(AlphaComposite.SrcOver.derive(0.7f));
+            g2d.setComposite(AlphaComposite.SrcOver.derive(window_material_transparency));
             g2d.setColor(Color.black);
             g2d.fillRect(0, title_bar_offset, getWidth(), getHeight() - title_bar_offset);
 
             /* set transparency for black window title material */
-            g2d.setComposite(AlphaComposite.SrcOver.derive(0.9f));
+            g2d.setComposite(AlphaComposite.SrcOver.derive(title_material_transparency));
             g2d.fillRect(0, 0, getWidth(), title_bar_offset);
 
             /* draw window title String */

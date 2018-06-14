@@ -17,6 +17,7 @@
 
 package main.java.ui;
 
+import main.java.common.LogUtils;
 import main.java.common.ThreadUtils;
 import main.java.constants.Constants;
 import main.java.constants.Definitions;
@@ -56,6 +57,8 @@ public class Window extends JFrame {
      */
     public Window() {
         super();
+
+        LogUtils.printGeneralMessage("Initializing main program Window " + this + ".");
 
         /* initialize JFrame */
         setSize(window_width, window_height);
@@ -100,6 +103,7 @@ public class Window extends JFrame {
                     Point2D original_rel_mousepoint = new Point2D.Float(
                             Canvas.rel_mouse_point_x, Canvas.rel_mouse_point_y);
 
+                    /* recalculate zoom factor based on wheel rotation */
                     float new_zoom_factor = Canvas.zoom_factor + e.getWheelRotation() / 50f;
                     if (new_zoom_factor < 1f / 7f) {
                         Canvas.zoom_factor = 1f / 7f;

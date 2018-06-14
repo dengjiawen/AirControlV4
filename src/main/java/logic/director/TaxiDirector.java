@@ -215,7 +215,7 @@ public class TaxiDirector extends Director {
         }
 
         /* check if the plane must turn (if there are no more nodes on the path */
-        if (current_node.getNextNode(reverse).getType() == Node.NodeType.INTERSECTION && target_path == null) {
+        if (current_node.getNextNode(reverse).getType() == Node.NodeType.INTERSECTION) {
             Intersection target_intersection = (Intersection) current_node.getNextNode(reverse);
 
             if (target_intersection.mustTurn(current_path, reverse)) {

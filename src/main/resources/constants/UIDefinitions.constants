@@ -6,6 +6,9 @@
 
     <FrostedPane>
         <titleOffset>30</titleOffset>
+
+        <windowMaterialTransparency>0.7</windowMaterialTransparency>
+        <titleMaterialTransparency>0.9</titleMaterialTransparency>
     </FrostedPane>
 
 </UIConstants>
