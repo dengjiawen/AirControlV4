@@ -12,7 +12,7 @@
         <showErrorMessages>1</showErrorMessages>
         <showRepaintMessages>0</showRepaintMessages>
 
-        <updateIntervals>5000</updateIntervals>
+        <updateIntervals>2500</updateIntervals>
     </LogUtils>
 
     <BlurUtils>

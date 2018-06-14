@@ -19,6 +19,9 @@
 
 package main.java.logic;
 
+import main.java.common.LogUtils;
+import main.java.constants.Constants;
+import main.java.constants.Definitions;
 import main.java.ui.Canvas;
 import main.java.ui.RenderUtils;
 
@@ -39,15 +42,20 @@ public class CloudDirector {
      */
     public static void init() {
 
+        LogUtils.printGeneralMessage("Initializing CloudDirector class!");
+
         /* calculate transparency of the haze */
         recalc_HazeTransparency();
         /* initiate hash map */
         clouds = new ConcurrentHashMap<>();
 
+        int cloud_gen_percentage = Constants.getInt("cloudGenPercentage", Definitions.ZERO_DAY_PATCH_SUPPLEMENTARY);
+
         /* initiate cloud spawn timer */
         cloud_spawning_timer = new Timer(10000, e -> {
 
-            if (ThreadLocalRandom.current().nextInt(0, 101) > 75) return;
+            /* 50% chance of generating a new random cloud */
+            if (ThreadLocalRandom.current().nextInt(0, 101) > cloud_gen_percentage) return;
 
             Cloud new_cloud = getRandomCloud();
             if (new_cloud != null) {
@@ -59,20 +67,32 @@ public class CloudDirector {
 
     }
 
+    /**
+     * Method that generates a random cloud.
+     * @return  a randomly generated cloud
+     */
     private static Cloud getRandomCloud() {
-        // Fred Dung
+
+        LogUtils.printGeneralMessage("CloudDirector: generating new cloud.");
+
+        /* run through all the possible styles, randomly generate a cloud */
         for (int i = 0; i < Cloud.CloudStyle.values().length; i++) {
             if (ThreadLocalRandom.current().nextDouble(0, 2) < 0.5) {
                 return Cloud.getCloudInstance(Cloud.CloudStyle.values()[i]);
             }
         }
 
+        /* it is possible that this method will return null */
         return null;
 
     }
 
-    public static void removeCloud(Cloud cloud) {
 
+    static void removeCloud(Cloud cloud) {
+
+        LogUtils.printGeneralMessage("CloudDirector: removing cloud " + cloud + ".");
+
+        /* stop cloud updates and remove the cloud */
         cloud.halt();
         clouds.forEach((i, c) -> {
             if (c == cloud) {
@@ -82,10 +102,16 @@ public class CloudDirector {
 
     }
 
+    /**
+     * Method that recalculates the transparency of the haze effect
+     */
     public static void recalc_HazeTransparency() {
 
+        /* some fancy math calculations */
+        /* if zoom factor is above 1.2, remove haze completely */
         float new_transparency = -1.2f + (0.9f - Canvas.zoom_factor) * 2 + 0.1f;
 
+        /* keep transparency between 0 and 1 */
         if (new_transparency < 0) {
             haze_transparency_factor = 0;
         } else if (new_transparency > 1) {
