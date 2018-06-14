@@ -21,6 +21,7 @@
 
 package main.java.ui;
 
+import main.java.common.LogUtils;
 import main.java.constants.Constants;
 import main.java.constants.Definitions;
 
@@ -43,6 +44,9 @@ public class RenderUtils {
             /* if repaint is requested, invoke repaint and update
              * blurred image effect for FrostedPanes */
             if (do_repaint) {
+
+                LogUtils.printRepaintMessage();
+
                 SwingUtilities.invokeLater(() -> {
                     Window.invokeRepaint();
                     Canvas.writeScreenForFrost();
@@ -65,7 +69,7 @@ public class RenderUtils {
     /**
      * Method that applies rendering hint to Graphics objects in order
      * to improve rendering quality.
-     * @param g2d
+     * @param g2d   target Graphics object
      */
     static void applyQualityRenderingHints(Graphics2D g2d) {
 
