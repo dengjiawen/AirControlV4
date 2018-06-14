@@ -4,8 +4,8 @@
     <WindowWidth>1350</WindowWidth>
     <WindowHeight>756</WindowHeight>
 
-    <TileHeight>18</TileHeight>
-    <TileWidth>18</TileWidth>
+    <FrostedPane>
+        <titleOffset>30</titleOffset>
+    </FrostedPane>
 
-    <ShowGrid>0</ShowGrid>
 </UIConstants>

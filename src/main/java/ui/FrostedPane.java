@@ -19,6 +19,8 @@
 package main.java.ui;
 
 import main.java.common.BlurUtils;
+import main.java.constants.Constants;
+import main.java.constants.Definitions;
 import main.java.resources.FontResource;
 
 import javax.swing.*;
@@ -32,17 +34,25 @@ public class FrostedPane extends JPanel {
 
     static ArrayList<FrostedPane> current_active_panes = new ArrayList<>(); // reference of active FrostedPanes for updates
 
-    static BufferedImage canvas_image_buffer;
-    static BufferedImage canvas_active_image;
+    static BufferedImage canvas_image_buffer;   // buffer of the image being calculated
+    static BufferedImage canvas_active_image;   // active image being shown
 
-    static int title_bar_offset = 30;
+    static int title_bar_offset = Constants.getInt("titleOffset", Definitions.UI_CONSTANTS);    // offset of the panel title
 
-    private ExecutorService blur_daemon;
-    private BufferedImage blurred_image;
+    private ExecutorService blur_daemon;    // Thread for handling the blurring operation
+    private BufferedImage blurred_image;    // The current image being calcualted
 
-    String name;
+    String name;    // the name shown on the panel
 
-    public FrostedPane(int x, int y, int width, int height, String name) {
+    /**
+     * Constructor
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @param name
+     */
+    FrostedPane(int x, int y, int width, int height, String name) {
         super();
 
         setLayout(null);
