@@ -19,6 +19,7 @@
 package main.java.ui;
 
 import main.java.common.BlurUtils;
+import main.java.common.LogUtils;
 import main.java.constants.Constants;
 import main.java.constants.Definitions;
 import main.java.resources.FontResource;
@@ -46,18 +47,23 @@ public class FrostedPane extends JPanel {
 
     /**
      * Constructor
-     * @param x
-     * @param y
-     * @param width
-     * @param height
-     * @param name
+     * @param x         x pos of the panel
+     * @param y         y pos of the panel
+     * @param width     panel width
+     * @param height    panel height
+     * @param name      panel title
      */
     FrostedPane(int x, int y, int width, int height, String name) {
+
         super();
 
+        LogUtils.printGeneralMessage("Initializing new FrostedPane " + this + ".");
+
+        /* nullify layout */
         setLayout(null);
         setBounds(x, y, width, height);
 
+        /* initialize instance variables */
         blur_daemon = Executors.newCachedThreadPool();
         blurred_image = null;
 
@@ -66,44 +72,63 @@ public class FrostedPane extends JPanel {
         this.name = name;
 
         RenderUtils.invokeRepaint();
+
     }
 
-    protected void updateBlurImage() {
+    /**
+     * Method that updates the background image of the JPanel
+     */
+    void updateBlurImage() {
+
         blur_daemon.submit(() -> {
 
+            /* get the section of image occupied by the pane */
+            /* apply blurring operation */
             BufferedImage active_image_buffer = canvas_active_image.getSubimage(getX(), getY(), getWidth(), getHeight());
-
             active_image_buffer = new BlurUtils().getFilteredImage(active_image_buffer);
 
             blurred_image = active_image_buffer;
 
             SwingUtilities.invokeLater(() -> repaint());
+
         });
+
+
     }
 
+    /**
+     * Overloaded paintComponent method
+     * @param g
+     */
+    @ Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
 
         if (blurred_image != null) {
 
-            try {
-                g.drawImage(blurred_image, 0, 0, this);
-            } catch (RasterFormatException e) {
-                //ignore
-            }
-
             Graphics2D g2d = (Graphics2D) g;
 
+            /* apply antialiasing and other rendering effects etc */
             RenderUtils.applyQualityRenderingHints(g2d);
 
+            /* draw out blurred image */
+            try {
+                g2d.drawImage(blurred_image, 0, 0, this);
+            } catch (RasterFormatException e) {
+                LogUtils.printErrorMessage(e.getMessage());
+            }
+
+            /* set transparency for black window material */
             g2d.setComposite(AlphaComposite.SrcOver.derive(0.7f));
             g2d.setColor(Color.black);
             g2d.fillRect(0, title_bar_offset, getWidth(), getHeight() - title_bar_offset);
 
+            /* set transparency for black window title material */
             g2d.setComposite(AlphaComposite.SrcOver.derive(0.9f));
             g2d.fillRect(0, 0, getWidth(), title_bar_offset);
 
+            /* draw window title String */
             g2d.setFont(FontResource.window_title);
             g2d.setColor(Color.white);
             g2d.drawString(name, 10, 20);

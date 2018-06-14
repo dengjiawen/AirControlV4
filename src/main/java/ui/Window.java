@@ -1,3 +1,20 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Window.java
+ * -----------------------------------------------------------------------------
+ * This object is the main JFrame for this program. It hosts the Canvas panel.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.ui;
 
 import main.java.common.ThreadUtils;
@@ -14,34 +31,40 @@ import java.awt.geom.Point2D;
 
 public class Window extends JFrame {
 
+    /* a reference of the active window */
     private static Window current_window_reference;
 
-    public static float mouse_point_x;
-    public static float mouse_point_y;
+    static float mouse_point_x;     // x pos of the mouse cursor
+    static float mouse_point_y;     // y pos of the mouse cursor
 
-    public static int window_height = Constants.getInt("WindowHeight", Definitions.UI_CONSTANTS);
-    public static int window_width = Constants.getInt("WindowWidth", Definitions.UI_CONSTANTS);
+    /* window size constants */
+    static int window_height = Constants.getInt("WindowHeight", Definitions.UI_CONSTANTS);
+    static int window_width = Constants.getInt("WindowWidth", Definitions.UI_CONSTANTS);
 
+    /* initial mouse event; when the mouse first starts to drag */
     private static MouseEvent initial_event;
 
-    private Canvas canvas;
-    private CommandPanel command;
-    private DBrite dbrite;
-    private ADIRS adirs;
-    private FrostedPane coord;
-    private JLabel temp;
+    private Canvas canvas;          // canvas: graphics painting panel
+    private CommandPanel command;   // command: for user to enter command
+    private DBrite dbrite;          // WORK IN PROGRESS
+    private ADIRS adirs;            // WORK IN PROGRESS
+    private FrostedPane coord;      // coordinate panel: for debug purposes only
+    private JLabel temp;            // for displaying coordinate
 
+    /**
+     * Default constructor
+     */
     public Window() {
         super();
 
-        setSize(
-                Constants.getInt("WindowWidth", Definitions.UI_CONSTANTS),
-                Constants.getInt("WindowHeight", Definitions.UI_CONSTANTS));
+        /* initialize JFrame */
+        setSize(window_width, window_height);
         setUndecorated(true);
         setResizable(false);
         setLayout(null);
         setLocationRelativeTo(null);
 
+        /* initialize custom JComponents */
         canvas = new Canvas();
         current_window_reference = this;
 
@@ -56,15 +79,21 @@ public class Window extends JFrame {
 
         coord.add(temp);
 
+        /* mouse listener for zooming */
         addMouseWheelListener(e -> {
 
             requestFocus();
 
+            /* submit calculations to mouse worker thread */
             ThreadUtils.mouse_worker.submit(() -> {
 
+                /* get the relative midpoint of the current screen section */
                 Point2D original_rel_midpoint = Canvas.calcRelPoint(new Point2D.Float(getWidth() / 2, getHeight() / 2));
 
+                /* update the relative location of the mouse on the screen;
+                 * so that the screen zoom towards the cursor */
                 Canvas.calcRelMousePoint();
+
 
                 if (e.getScrollType() == MouseWheelEvent.WHEEL_UNIT_SCROLL) {
 
@@ -98,7 +127,6 @@ public class Window extends JFrame {
 
                     RenderUtils.invokeRepaint();
 
-                    //System.out.println(Canvas.zoom_factor);
                     CloudDirector.recalc_HazeTransparency();
 
                 }
@@ -194,7 +222,7 @@ public class Window extends JFrame {
 
     }
 
-    void boundCorrection() {
+    private void boundCorrection() {
 
         Point2D rel_point = Canvas.calcRelPoint(new Point2D.Float(0f, 0f));
 
