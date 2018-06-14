@@ -14,4 +14,8 @@
         <pointIntervals>100</pointIntervals>
     </LinearUtils>
 
+    <CloudDirector>
+        <cloudGenPercentage>50</cloudGenPercentage>
+    </CloudDirector>
+
 </AddedConstants>

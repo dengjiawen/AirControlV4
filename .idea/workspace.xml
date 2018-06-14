@@ -59,7 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>30b4815a</find>
       <find>sort</find>
       <find>sor</find>
       <find>!reverse</find>
@@ -74,9 +73,9 @@
       <find>filter9</find>
       <find>frost_worker</find>
       <find>filter16</find>
-      <find />
+      <find>will try to handle</find>
       <find>System.out.println</find>
-      <find />
+      <find>LogUtils.printGeneralMessage(&quot;Director &quot; + this + &quot; is requesting to look ahead for possible turns.&quot;);</find>
       <find>updateNode</find>
       <find>xIsOnline</find>
       <find>jumpPoint</find>
@@ -86,9 +85,10 @@
       <find>acl_offset</find>
       <find>public</find>
       <find>tolerance</find>
-      <find />
-      <find />
+      <find>static Line2D</find>
+      <find>= new Line2D.Double(</find>
       <find>rwy</find>
+      <find>removeCloud</find>
     </findStrings>
   </component>
   <component name="Git.Settings">

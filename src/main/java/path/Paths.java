@@ -1,5 +1,27 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Paths.java
+ * -----------------------------------------------------------------------------
+ * This enumerated type manages all of the possible paths that the plane can
+ * travel on.
+ *
+ * This class is a part of AssistLogic.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.path;
 
+import main.java.constants.Definitions;
+import main.java.constants.ParseUtils;
 import main.java.path.math.AngleUtils;
 import main.java.path.math.LinearUtils;
 
@@ -12,6 +34,9 @@ import java.nio.file.Path;
 
 public enum Paths implements Serializable {
 
+    /**
+     * All of the runways and taxiways
+     */
     rwy26(MapUtils.rwy26, "RWY 26"), rwy35(MapUtils.rwy35, "RWY 35"), rwy3L(MapUtils.rwy3L, "RWY 3L"), rwy3R(MapUtils.rwy3R, "RWY 3R"),
 
     taxiE(MapUtils.taxiE, "TAXIWAY E"), taxiD(MapUtils.taxiD, "TAXIWAY D"),
@@ -25,7 +50,9 @@ public enum Paths implements Serializable {
 
     taxiP(MapUtils.taxiP, "TAXIWAY P"), taxiB(MapUtils.taxiB, "TAXIWAY B");
 
-    private static final String MAP_IDENTIFIER = "XfSlMhgAsUAw1aj1G3sD5";
+
+    private static final String MAP_IDENTIFIER = ParseUtils.parseString(Definitions.CORE_CONSTANTS.getPath(), "ConfigFileIdentifier");
+
     private static boolean MAP_UP_TO_DATE;
 
     public transient Color debug_color;
