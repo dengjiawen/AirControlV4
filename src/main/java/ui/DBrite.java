@@ -1,3 +1,21 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * DBrite.java
+ * -----------------------------------------------------------------------------
+ * Work in progress class for future functions.
+ * This class is not commented because it is work in progress.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.ui;
 
 import java.awt.*;

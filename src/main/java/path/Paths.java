@@ -57,7 +57,7 @@ public enum Paths implements Serializable {
 
     /* color for the Paths, debugging purposes only */
     public transient Color debug_color;
-    
+
     private Line2D path;
     private Node[] nodes;
     private String name;
