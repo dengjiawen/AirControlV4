@@ -41,8 +41,37 @@
       <file leaf-file-name="Paths.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+            <state relative-caret-position="317">
+              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#5136#5137#0" expanded="true" />
+                <element signature="e#5171#5172#0" expanded="true" />
+                <element signature="e#5224#5225#0" expanded="true" />
+                <element signature="e#5259#5260#0" expanded="true" />
+                <element signature="e#5291#5292#0" expanded="true" />
+                <element signature="e#5335#5336#0" expanded="true" />
+                <element signature="e#5752#5753#0" expanded="true" />
+                <element signature="e#5779#5780#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreDefinitions.constants" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADIRS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/ADIRS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -73,9 +102,9 @@
       <find>filter9</find>
       <find>frost_worker</find>
       <find>filter16</find>
-      <find>will try to handle</find>
+      <find />
       <find>System.out.println</find>
-      <find>LogUtils.printGeneralMessage(&quot;Director &quot; + this + &quot; is requesting to look ahead for possible turns.&quot;);</find>
+      <find />
       <find>updateNode</find>
       <find>xIsOnline</find>
       <find>jumpPoint</find>
@@ -85,8 +114,8 @@
       <find>acl_offset</find>
       <find>public</find>
       <find>tolerance</find>
-      <find>static Line2D</find>
-      <find>= new Line2D.Double(</find>
+      <find />
+      <find />
       <find>rwy</find>
       <find>removeCloud</find>
     </findStrings>
@@ -137,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/main/java/constants/ParseUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/Definitions.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/dlc/DLCDefinitions.constants" />
-        <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/bombardier_patch/AddedDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/java/resources/ImageResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/speech/SpeechUtils.java" />
@@ -145,9 +173,10 @@
         <option value="$PROJECT_DIR$/src/main/java/path/MapUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/Cloud.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CommandUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CloudDirector.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants" />
+        <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
       </list>
     </option>
   </component>
@@ -225,48 +254,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="music" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="path" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="path" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AirControlV3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="speech" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AirControlV3" type="b2602c69:ProjectViewProjectNode" />
@@ -532,12 +520,12 @@
       <workItem from="1528917939713" duration="1758000" />
       <workItem from="1528926981486" duration="2384000" />
       <workItem from="1528991574929" duration="507000" />
-      <workItem from="1528994693068" duration="2886000" />
+      <workItem from="1528994693068" duration="3134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171958000" />
+    <option name="totallyTimeSpent" value="172206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="783" extended-state="6" />
@@ -550,14 +538,14 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23891273" side_tool="true" visible="true" weight="0.11516035" />
-      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.08011445" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="7" visible="true" weight="0.08011445" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" x="1452" y="851" width="1268" height="173" id="Run" order="2" sideWeight="0.76108724" type="WINDOWED" visible="true" weight="0.35393938" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18526466" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18526466" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -716,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/FontResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
@@ -748,13 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1920">
           <caret line="139" column="96" selection-start-line="139" selection-start-column="96" selection-end-line="139" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ADIRS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -840,13 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -951,13 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1011,6 +971,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ADIRS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1018,10 +995,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/FontResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
+        <state relative-caret-position="317">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#5136#5137#0" expanded="true" />
+            <element signature="e#5171#5172#0" expanded="true" />
+            <element signature="e#5224#5225#0" expanded="true" />
+            <element signature="e#5259#5260#0" expanded="true" />
+            <element signature="e#5291#5292#0" expanded="true" />
+            <element signature="e#5335#5336#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#5779#5780#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -51,15 +51,16 @@ public enum Paths implements Serializable {
     taxiP(MapUtils.taxiP, "TAXIWAY P"), taxiB(MapUtils.taxiB, "TAXIWAY B");
 
 
+    /* a unique identifier that informs the program whether the config files are up to date */
     private static final String MAP_IDENTIFIER = ParseUtils.parseString(Definitions.CORE_CONSTANTS.getPath(), "ConfigFileIdentifier");
-
     private static boolean MAP_UP_TO_DATE;
 
+    /* color for the Paths, debugging purposes only */
     public transient Color debug_color;
-
+    
     private Line2D path;
     private Node[] nodes;
-    private String name; //(.)(.)
+    private String name;
 
     private double heading;
 
