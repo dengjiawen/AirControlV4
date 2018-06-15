@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DebugConstants>
+
+    <CoordPanel>
+        <CoordPanelX>1100</CoordPanelX>
+        <CoordPanelY>600</CoordPanelY>
+
+        <CoordPanelW>200</CoordPanelW>
+        <CoordPanelH>70</CoordPanelH>
+
+        <CoordTextX>10</CoordTextX>
+        <CoordTextY>30</CoordTextY>
+
+        <CoordTextW>190</CoordTextW>
+        <CoordTextH>40</CoordTextH>
+    </CoordPanel>
+
+</DebugConstants>

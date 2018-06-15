@@ -38,7 +38,13 @@ public enum Definitions {
     BOMBARDIER_PATCH("/constants/bombardier_patch/AddedDefinitions.constants"),
 
     /* added content */
-    DLC_1("/constants/dlc/DLCDefinitions.constants");
+    DLC_1("/constants/dlc/DLCDefinitions.constants"),
+
+    /* constants needed for debugging purposes */
+    DEBUG_PATCH("/constants/debug_patch/DebugDefinitions.constants"),
+
+    /* constants needed for lights */
+    LIGHT_PATCH("/constants/light_patch/LightDefinitions.constants");
 
     private String path;    // path to definition file
 

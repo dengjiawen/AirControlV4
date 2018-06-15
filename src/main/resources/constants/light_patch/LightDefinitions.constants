@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LightConstants>
+
+    <UniversalLightConfigs>
+
+        <ACLStrobeInterval>300</ACLStrobeInterval>
+        <ACLStrobeRestInterval>1500</ACLStrobeRestInterval>
+
+        <StrobeRegulator>
+            <StrobeRegulatorInterval>200</StrobeRegulatorInterval>
+            <StrobeRestRegulatorInterval>1000</StrobeRestRegulatorInterval>
+
+            <TailStrobeRegulatorInterval>250</TailStrobeRegulatorInterval>
+            <TailStrobeRestRegulatorInterval>1250</TailStrobeRestRegulatorInterval>
+        </StrobeRegulator>
+
+    </UniversalLightConfigs>
+
+</LightConstants>

@@ -63,6 +63,10 @@ public class Light {
     private Timer tail_strobe_regulator;
     private Timer tail_strobe_rest_regulator;
 
+    /* these constants are repeatedly called, so they are preloaded into variables */
+    private static int ACL_strobe_interval = Constants.getInt("ACLStrobeInterval", Definitions.LIGHT_PATCH);
+    private static int ACL_strobe_rest_interval = Constants.getInt("ACLStrobeRestInterval", Definitions.LIGHT_PATCH);
+
     /**
      * Default constructor
      */
@@ -71,16 +75,20 @@ public class Light {
         LogUtils.printGeneralMessage("New Light object " + this + " created!");
 
         /* initialize controller timers */
-        acl_light_regulator = new Timer(300, e -> {
+
+        /* collision warning light regulator, 300 ms delay and 1500 ms between flashes */
+        acl_light_regulator = new Timer(
+                Constants.getInt("ACLStrobeInterval", Definitions.LIGHT_PATCH), e -> {
 
             acl_on = !acl_on;
             acl_light_regulator.setDelay(
-                    (acl_light_regulator.getDelay() == 300) ? 1500 : 300);
+                    (acl_light_regulator.getDelay() == ACL_strobe_interval) ? ACL_strobe_rest_interval : ACL_strobe_interval);
 
             RenderUtils.invokeRepaint();
 
         });
-        strobe_regulator = new Timer(200, e -> {
+        /* strobe light regulator, double stroke of 200 ms intervals */
+        strobe_regulator = new Timer(Constants.getInt("StrobeRegulatorInterval", Definitions.LIGHT_PATCH), e -> {
 
             if (strobe_count == 0) {
                 strobe_on = true;
@@ -100,16 +108,18 @@ public class Light {
             RenderUtils.invokeRepaint();
 
         });
-        strobe_rest_regulator = new Timer(1000, e -> {
+        /* strobe light rest regulator, rests for 1000 ms between double strokes */
+        strobe_rest_regulator = new Timer(Constants.getInt("StrobeRestRegulatorInterval", Definitions.LIGHT_PATCH), e -> {
             if (strobe_count != 0) {
                 strobe_count = 0;
-            } else if (strobe_count == 0) {
+            } else {
                 strobe_rest_regulator.stop();
                 strobe_regulator.restart();
             }
         });
 
-        tail_strobe_regulator = new Timer(250, e -> {
+        /* tail strobe light regulator, double stroke of 250 ms intervals */
+        tail_strobe_regulator = new Timer(Constants.getInt("TailStrobeRegulatorInterval", Definitions.LIGHT_PATCH), e -> {
 
             if (tail_strobe_count == 0) {
                 tail_strobe_on = true;
@@ -129,10 +139,11 @@ public class Light {
             RenderUtils.invokeRepaint();
 
         });
-        tail_strobe_rest_regulator = new Timer(1250, e -> {
+        /* tail strobe light rest regulator, rests for 1250 ms between double strokes */
+        tail_strobe_rest_regulator = new Timer(Constants.getInt("TailStrobeRestRegulatorInterval", Definitions.LIGHT_PATCH), e -> {
             if (tail_strobe_count != 0) {
                 tail_strobe_count = 0;
-            } else if (tail_strobe_count == 0) {
+            } else {
                 tail_strobe_rest_regulator.stop();
                 tail_strobe_regulator.restart();
             }
@@ -150,6 +161,8 @@ public class Light {
      * Method that loads all of the position parameters.
      */
     public void init() {
+
+        LogUtils.printGeneralMessage("Initializing Light object " + this + ".");
 
         wingtip_nav_offset_x = Constants.getInt("wingTipOffsetX", Definitions.BOMBARDIER_PATCH);
         wingtip_nav_offset_y = Constants.getInt("wingTipOffsetY", Definitions.BOMBARDIER_PATCH);

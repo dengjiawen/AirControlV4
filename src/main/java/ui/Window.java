@@ -74,11 +74,20 @@ public class Window extends JFrame {
         command = new CommandPanel();
         adirs = new ADIRS();
         dbrite = new DBrite();
-        coord = new FrostedPane(1100, 600, 200, 70, "Coord");
+        coord = new FrostedPane(
+                Constants.getInt("CoordPanelX", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordPanelY", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordPanelW", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordPanelH", Definitions.DEBUG_PATCH),
+                "Coord");
 
         temp = new JLabel();
         temp.setForeground(Color.white);
-        temp.setBounds(10, 30, 190, 40);
+        temp.setBounds(
+                Constants.getInt("CoordTextX", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordTextY", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordTextW", Definitions.DEBUG_PATCH),
+                Constants.getInt("CoordTextH", Definitions.DEBUG_PATCH));
 
         coord.add(temp);
 
@@ -105,6 +114,8 @@ public class Window extends JFrame {
 
                     /* recalculate zoom factor based on wheel rotation */
                     float new_zoom_factor = Canvas.zoom_factor + e.getWheelRotation() / 50f;
+
+                    /* ensure that zoom factor is between 1/7 and 0.9. (factors are purely arbitrary */
                     if (new_zoom_factor < 1f / 7f) {
                         Canvas.zoom_factor = 1f / 7f;
                     } else if (new_zoom_factor > 0.9f) {
@@ -113,30 +124,35 @@ public class Window extends JFrame {
                         Canvas.zoom_factor = new_zoom_factor;
                     }
 
+                    /* recalcualte relative mouse point */
                     Canvas.calcRelMousePoint();
 
+                    /* position Canvas object to ensure that mouse cursor remains in original position */
                     if (e.getWheelRotation() > 0) {
                         Canvas.transpose_x += Canvas.rel_mouse_point_x - original_rel_mousepoint.getX();
                         Canvas.transpose_y += Canvas.rel_mouse_point_y - original_rel_mousepoint.getY();
                     } else {
 
+                        /* place mouse cursor in the middle of the screen */
                         Point2D current_rel_midpoint = Canvas.calcRelPoint(new Point2D.Float(getWidth() / 2, getHeight() / 2));
 
                         Canvas.transpose_x += current_rel_midpoint.getX() - original_rel_midpoint.getX();
                         Canvas.transpose_y += current_rel_midpoint.getY() - original_rel_midpoint.getY();
                     }
 
+                    /* correct Canvas bound */
                     boundCorrection();
-
 
                     RenderUtils.invokeRepaint();
 
+                    /* recalculate haze transparency based on new zoom factor */
                     CloudDirector.recalc_HazeTransparency();
 
                 }
 
             });
         });
+        /* mouse listener for tracking dragging events */
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -144,6 +160,7 @@ public class Window extends JFrame {
 
                 requestFocus();
 
+                /* keep reference of initial mouse event when mouse is pressed */
                 initial_event = e;
 
             }
@@ -152,16 +169,20 @@ public class Window extends JFrame {
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
 
+                /* nullify initial event when mouse is released */
                 initial_event = null;
 
             }
         });
+        /* mouse listener for tracking dragging events */
         addMouseMotionListener(new MouseAdapter() {
 
             @Override
             public void mouseMoved(MouseEvent e) {
                 super.mouseMoved(e);
 
+                /* whenever mouse move, calculate its relative position on the screen */
+                /* update this position for the coord. panel (for debugging purposes only) */
                 mouse_point_x = e.getX();
                 mouse_point_y = e.getY();
 
@@ -178,11 +199,13 @@ public class Window extends JFrame {
 
                 requestFocus();
 
+                /* move the image in correspondence with the mouse movement */
                 if (initial_event != null) {
                     Canvas.transpose_x += (mouse_point_x - initial_event.getX()) / Canvas.zoom_factor;
                     Canvas.transpose_y += (mouse_point_y - initial_event.getY()) / Canvas.zoom_factor;
                 }
 
+                /* correct bound */
                 boundCorrection();
 
                 initial_event = e;
@@ -197,7 +220,10 @@ public class Window extends JFrame {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
 
+                /* if shift is pressed, begin speech recognition session */
                 if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+
+                    LogUtils.printDebugMessage("SpeechUtils: (BETA) Speech session began.");
                     SpeechUtils.startSpeechSession();
                 }
             }
@@ -206,7 +232,10 @@ public class Window extends JFrame {
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
 
+                /* if shift is released, stop speech recognition session */
                 if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+
+                    LogUtils.printDebugMessage("SpeechUtils: (BETA) Speech session stopped.");
                     SpeechUtils.stopSpeechSession();
                 }
             }
@@ -226,30 +255,44 @@ public class Window extends JFrame {
 
     }
 
+    /**
+     * This method checks if Canvas is out of bounds, and ensures
+     * that Canvas stays within the visible range of the Window
+     * object at all times.
+     */
     private void boundCorrection() {
 
+        /* get relative point of 0,0 */
         Point2D rel_point = Canvas.calcRelPoint(new Point2D.Float(0f, 0f));
 
+        /* if canvas had moved to the left of the Window, move it to the right */
         if (rel_point.getX() < 0f) {
             Canvas.transpose_x += (rel_point.getX());
         }
 
+        /* if canvas had moved to the top of the Window, move it down */
         if (rel_point.getY() < 0f) {
             Canvas.transpose_y += (rel_point.getY());
         }
 
+        /* get relative point of getWidth, getHeight (window size) */
         rel_point = Canvas.calcRelPoint(new Point2D.Float(getWidth(), getHeight()));
 
+        /* if the canvas had moved to the right of the Window, move it to the left */
         if (rel_point.getX() > ImageResource.map_YUMA_airport.getWidth()) {
             Canvas.transpose_x -= ImageResource.map_YUMA_airport.getWidth() - rel_point.getX();
         }
 
+        /* if the canvas had moved to the bottom of the window, move it up */
         if (rel_point.getY() > ImageResource.map_YUMA_airport.getHeight()) {
             Canvas.transpose_y -= ImageResource.map_YUMA_airport.getHeight() - rel_point.getY();
         }
 
     }
 
+    /**
+     * Method that revalidates and repaints all JComponents hosted within Window.
+     */
     static void invokeRepaint() {
         current_window_reference.revalidate();
         current_window_reference.repaint();
