@@ -69,9 +69,10 @@ public class Canvas extends JPanel {
 
     /**
      * Overriden paintComponent method.
+     *
      * @param g
      */
-    @ Override
+    @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
@@ -86,6 +87,7 @@ public class Canvas extends JPanel {
 
     /**
      * Method that paints a given path for debugging purposes.
+     *
      * @param path
      * @param g2d
      */
@@ -100,6 +102,7 @@ public class Canvas extends JPanel {
 
     /**
      * Method that paints a given plane.
+     *
      * @param plane
      * @param g2d
      */
@@ -141,6 +144,7 @@ public class Canvas extends JPanel {
 
     /**
      * Method that paints lighting for a given plane.
+     *
      * @param plane
      * @param g2d
      */
@@ -193,6 +197,7 @@ public class Canvas extends JPanel {
 
     /**
      * Method that paints all of the cloud objects.
+     *
      * @param g2d
      */
     private void paintCloud(Graphics2D g2d) {
@@ -206,9 +211,10 @@ public class Canvas extends JPanel {
 
     /**
      * Master paint method, paints all of the graphical elements.
+     *
      * @param g2d
-     * @param haze  whether the hazing effect should be painted
-     *              (haze is not painted when painting for BlurUtils)
+     * @param haze whether the hazing effect should be painted
+     *             (haze is not painted when painting for BlurUtils)
      */
     private void paintAll(Graphics2D g2d, boolean haze) {
 
@@ -246,6 +252,7 @@ public class Canvas extends JPanel {
 
     /**
      * Method that paints debugging contents.
+     *
      * @param g2d
      */
     private void paintDebug(Graphics2D g2d) {
@@ -257,7 +264,7 @@ public class Canvas extends JPanel {
             /* highlight intersections with green (if the plane must turn) and red */
             for (int i = 0; i < path.getNumNodes(); i++) {
                 if (path.getNode(i).getType() == Node.NodeType.INTERSECTION) {
-                    if (((Intersection)(path.getNode(i))).haveMustTurn()) {
+                    if (((Intersection) (path.getNode(i))).haveMustTurn()) {
                         g2d.setColor(Color.GREEN);
                     } else {
                         g2d.setColor(Color.RED);
@@ -348,8 +355,9 @@ public class Canvas extends JPanel {
     /**
      * Method that calculates a relative point on the Canvas.
      * This method operates on the same principle as calcRelMousePoint().
+     *
      * @param point point on Window
-     * @return  relative point on Canvas
+     * @return relative point on Canvas
      */
     static Point2D calcRelPoint(Point2D point) {
 

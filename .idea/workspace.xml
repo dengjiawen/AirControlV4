@@ -38,32 +38,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Paths.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Paths.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2809">
-              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="349" column="35" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
+            <state relative-caret-position="156">
+              <caret line="283" column="78" selection-start-line="283" selection-start-column="78" selection-end-line="283" selection-end-column="78" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="method#Canvas#0;class#Canvas#0" />
-                <element signature="method#paintComponent#0;class#Canvas#0" />
-                <element signature="method#paintPath#0;class#Canvas#0" />
-                <element signature="method#paintPlane#0;class#Canvas#0" />
-                <element signature="method#paintLight#0;class#Canvas#0" />
-                <element signature="method#paintCloud#0;class#Canvas#0" />
-                <element signature="method#paintAll#0;class#Canvas#0" />
-                <element signature="method#paintDebug#0;class#Canvas#0" />
-                <element signature="method#writeScreenForFrost#0;class#Canvas#0" />
+                <element signature="e#3061#3062#0" expanded="true" />
+                <element signature="e#3157#3158#0" expanded="true" />
+                <element signature="e#3164#5472#0" />
+                <element signature="e#5478#6206#0" />
+                <element signature="e#6212#7202#0" />
+                <element signature="e#7951#8203#0" />
+                <element signature="e#8127#8128#0" expanded="true" />
+                <element signature="e#8171#8172#0" expanded="true" />
+                <element signature="e#9414#9415#0" expanded="true" />
+                <element signature="e#9441#9442#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +85,6 @@
       <find>frost_worker</find>
       <find>filter16</find>
       <find>will try to handle</find>
-      <find>System.out.println</find>
       <find>LogUtils.printGeneralMessage(&quot;Director &quot; + this + &quot; is requesting to look ahead for possible turns.&quot;);</find>
       <find>updateNode</find>
       <find>xIsOnline</find>
@@ -111,6 +101,7 @@
       <find>removeCloud</find>
       <find>(.)</find>
       <find>Transparency</find>
+      <find>System.out.println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/CommandUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CloudDirector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
         <option value="$PROJECT_DIR$/src/main/java/Launcher.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/java/ui/FrostedPane.java" />
@@ -170,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ui/ADIRS.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/ImageResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Canvas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
       </list>
     </option>
   </component>
@@ -215,9 +206,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,12 +557,13 @@
       <workItem from="1528994693068" duration="3587000" />
       <workItem from="1528999388170" duration="815000" />
       <workItem from="1529008084158" duration="2791000" />
-      <workItem from="1529013740563" duration="7799000" />
+      <workItem from="1529013740563" duration="8246000" />
+      <workItem from="1529064801473" duration="1385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184064000" />
+    <option name="totallyTimeSpent" value="185896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,20 +579,19 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" visible="true" weight="0.32969698" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4828326" weight="0.32969698" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4985694" visible="true" weight="0.32969698" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" visible="true" weight="0.32969698" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50143063" side_tool="true" visible="true" weight="0.32969698" />
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.09656652" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" x="171" y="640" width="1150" height="409" id="Run" order="2" sideWeight="0.76108724" type="WINDOWED" visible="true" weight="0.35393938" />
+      <window_info anchor="bottom" x="171" y="640" width="1150" height="409" id="Run" order="2" sideWeight="0.76108724" type="WINDOWED" weight="0.35393938" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19170243" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19456366" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -615,37 +606,38 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4828326" weight="0.32969698" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4828326" weight="0.32969698" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7646638" visible="true" weight="0.32969698" />
       <window_info anchor="bottom" id="Inspection Results" order="12" sideWeight="0.5135909" weight="0.32969698" />
       <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.2353362" side_tool="true" visible="true" weight="0.32969698" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.21939394" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4828326" weight="0.32969698" />
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +648,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="27" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -664,6 +656,26 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3164#5472#0" />
+            <element signature="e#5478#6206#0" />
+            <element signature="e#6212#7202#0" />
+            <element signature="e#7951#8203#0" />
+            <element signature="e#8127#8128#0" expanded="true" />
+            <element signature="e#8171#8172#0" expanded="true" />
+            <element signature="e#9414#9415#0" expanded="true" />
+            <element signature="e#9441#9442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/common/LogUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -932,9 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/debug_patch/DebugDefinitions">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1027,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2809">
-          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/constants/dlc/DLCDefinitions.constants">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
@@ -1115,8 +1117,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="349" column="35" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
+        <state relative-caret-position="989">
+          <caret line="353" selection-start-line="353" selection-end-line="353" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -1129,6 +1131,28 @@
             <element signature="method#paintAll#0;class#Canvas#0" />
             <element signature="method#paintDebug#0;class#Canvas#0" />
             <element signature="method#writeScreenForFrost#0;class#Canvas#0" />
+            <element signature="method#calcRelMousePoint#0;class#Canvas#0" />
+            <element signature="method#calcRelPoint#0;class#Canvas#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/path/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="283" column="78" selection-start-line="283" selection-start-column="78" selection-end-line="283" selection-end-column="78" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3164#5472#0" />
+            <element signature="e#5478#6206#0" />
+            <element signature="e#6212#7202#0" />
+            <element signature="e#7951#8203#0" />
+            <element signature="e#8127#8128#0" expanded="true" />
+            <element signature="e#8171#8172#0" expanded="true" />
+            <element signature="e#9414#9415#0" expanded="true" />
+            <element signature="e#9441#9442#0" expanded="true" />
           </folding>
         </state>
       </provider>
