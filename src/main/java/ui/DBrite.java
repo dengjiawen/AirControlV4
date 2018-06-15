@@ -18,12 +18,16 @@
 
 package main.java.ui;
 
+import main.java.common.LogUtils;
+
 import java.awt.*;
 
 public class DBrite extends FrostedPane {
 
-    public DBrite() {
+    DBrite() {
         super(25, Window.window_height - 300 - 25, 300, 300, "DBRITE");
+
+        LogUtils.printDebugMessage("Initializing DBRITE object " + this + "!");
 
     }
 

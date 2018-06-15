@@ -1,5 +1,23 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Canvas.java
+ * -----------------------------------------------------------------------------
+ * This panel paints all of the Graphics object onto the window.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.ui;
 
+import main.java.common.LogUtils;
 import main.java.common.ThreadUtils;
 import main.java.logic.*;
 import main.java.path.Intersection;
@@ -15,21 +33,27 @@ import java.awt.image.BufferedImage;
 
 public class Canvas extends JPanel {
 
-    public static boolean debug;
+    public static boolean debug;    // whether debug mode should be enabled
 
-    public static Canvas current_canvas_reference;
+    private static Canvas current_canvas_reference; // static reference of the currently active Canvas object
 
-    public static float zoom_factor = 1f / 7f;
-    public static float transpose_x;
-    public static float transpose_y;
+    public static float zoom_factor = 1f / 7f;  // zoom factor
+    static float transpose_x;                   // canvas displacement in Window, x
+    static float transpose_y;                   // canvas displacement in Window, y
 
-    public static float rel_mouse_point_x;
-    public static float rel_mouse_point_y;
+    static float rel_mouse_point_x;     // relative mouse position on canvas, x
+    static float rel_mouse_point_y;     // relative mouse position on canvas, y
 
-    public Canvas() {
+    /**
+     * Default constructor
+     */
+    Canvas() {
 
         super();
 
+        LogUtils.printGeneralMessage("Initializing Canvas " + this + "!");
+
+        /* initialize instance variables */
         transpose_x = 0f;
         transpose_y = (getHeight() - ImageResource.map_YUMA_airport.getHeight() * zoom_factor) / 2;
 
@@ -40,8 +64,14 @@ public class Canvas extends JPanel {
         current_canvas_reference = this;
 
         writeScreenForFrost();
+
     }
 
+    /**
+     * Overriden paintComponent method.
+     * @param g
+     */
+    @ Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
@@ -54,7 +84,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintPath(Paths path, Graphics2D g2d) {
+    private void paintPath(Paths path, Graphics2D g2d) {
 
         g2d.setColor(path.debug_color);
         g2d.setStroke(new BasicStroke(8f));
@@ -62,7 +92,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintPlane(Airplane plane, Graphics2D g2d) {
+    private void paintPlane(Airplane plane, Graphics2D g2d) {
 
         AffineTransform original = g2d.getTransform();
         g2d.rotate(plane.getHeading(), plane.getX(), plane.getY());
@@ -92,7 +122,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintLight(Airplane plane, Graphics2D g2d) {
+    private void paintLight(Airplane plane, Graphics2D g2d) {
 
         Light light = plane.getLight();
 
@@ -134,7 +164,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintCloud(Graphics2D g2d) {
+    private void paintCloud(Graphics2D g2d) {
 
         CloudDirector.clouds.forEach((v, c) -> {
             g2d.drawImage(c.getSprite(), c.getX(), c.getY(), c.getWidth(), c.getHeight(), this);
@@ -142,7 +172,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintAll(Graphics2D g2d, boolean haze) {
+    private void paintAll(Graphics2D g2d, boolean haze) {
 
         AffineTransform transform = new AffineTransform();
         transform.scale(zoom_factor, zoom_factor);
@@ -170,7 +200,7 @@ public class Canvas extends JPanel {
 
     }
 
-    protected void paintDebug(Graphics2D g2d) {
+    private void paintDebug(Graphics2D g2d) {
 
         for (Paths path : Paths.values()) {
             paintPath(path, g2d);
@@ -212,12 +242,12 @@ public class Canvas extends JPanel {
 
     }
 
-    final static Area clipped_area = new Area(
+    private final static Area clipped_area = new Area(
             new Rectangle2D.Double(0, 0, Window.window_width, Window.window_height)) {{
         subtract(new Area(new Rectangle2D.Double(525, 0, 300, 756)));
     }};
 
-    protected static void writeScreenForFrost() {
+    static void writeScreenForFrost() {
 
         if (!current_canvas_reference.isVisible()) return;
 
@@ -237,13 +267,13 @@ public class Canvas extends JPanel {
 
     }
 
-    public static void calcRelMousePoint() {
+    static void calcRelMousePoint() {
         rel_mouse_point_x = Window.mouse_point_x / zoom_factor - transpose_x;
         rel_mouse_point_y = Window.mouse_point_y / zoom_factor - transpose_y;
 
     }
 
-    public static Point2D calcRelPoint(Point2D point) {
+    static Point2D calcRelPoint(Point2D point) {
 
         Point2D rel_point = new Point2D.Float();
 

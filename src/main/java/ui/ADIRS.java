@@ -18,14 +18,17 @@
 
 package main.java.ui;
 
+import main.java.common.LogUtils;
 import main.java.resources.ImageResource;
 
 import java.awt.*;
 
 public class ADIRS extends FrostedPane {
 
-    public ADIRS() {
+    ADIRS() {
         super(Window.window_width - 350 - 25, 25, 350, 420, "ADIRS");
+
+        LogUtils.printDebugMessage("Initializing ADIRS object " + this + "!");
 
     }
 
