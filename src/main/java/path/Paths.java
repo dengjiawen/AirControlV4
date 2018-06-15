@@ -305,56 +305,87 @@ public enum Paths implements Serializable {
         String directory = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
         directory += "/AirControlV3/telemetry/";
 
+        LogUtils.printGeneralMessage("Attempting to write calculated telemetry files to " + directory + ".");
+
         Path dir_path = java.nio.file.Paths.get(directory);
         try {
+            /* try to write to directory to see if directory is writable */
             Files.createDirectories(dir_path);
         } catch (IOException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
+            LogUtils.printErrorMessage("Error writing to " + directory + ". Writing operation might fail.");
+            return;
         }
 
+        /* begin writing Paths to file */
         for (Paths path : values()) {
 
             ObjectOutputStream out = null;
             try {
+                /* write MAP_IDENTIFIER and node arrays to file */
+                LogUtils.printGeneralMessage("Starting to write Path " + path + " to file with identifier " + MAP_IDENTIFIER + ".");
                 out = new ObjectOutputStream(new FileOutputStream(directory + "telemetry_" + path.toString() + ".path"));
                 out.writeObject(MAP_IDENTIFIER);
                 out.writeObject(path.nodes);
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                LogUtils.printErrorMessage(e.getMessage());
+                LogUtils.printErrorMessage("Error writing Path to " + directory + ". Will give up.");
+                return;
             } catch (IOException e) {
-                e.printStackTrace();
+                LogUtils.printErrorMessage(e.getMessage());
+                LogUtils.printErrorMessage("Error writing Path to " + directory + ". Will give up.");
+                return;
             }
 
         }
 
     }
 
+    /**
+     * Method that read the telementry data to file.
+     * @return  a boolean indicating whether the file was successfully read
+     */
     public static boolean readTelemetryData() {
 
+        /* get save directory by using the default path from JFileChooser */
         String directory = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
         directory += "/AirControlV3/telemetry/";
 
+        LogUtils.printGeneralMessage("Attempting to read calculated telemetry files from " + directory + ".");
+
+        /* begin reading Paths */
         for (Paths path : values()) {
 
             ObjectInputStream in = null;
             try {
+
+                /* read MAP_IDENTIFIER and node arrays */
+                LogUtils.printGeneralMessage("Starting to read Path " + path + ".");
+
                 in = new ObjectInputStream(new FileInputStream(directory + "telemetry_" + path.toString() + ".path"));
 
                 String map_identifier = (String) in.readObject();
+                LogUtils.printGeneralMessage("Checking saved identifier " + map_identifier + " with identifier " + MAP_IDENTIFIER + ".");
                 MAP_UP_TO_DATE = map_identifier.equals(MAP_IDENTIFIER);
-                if (!MAP_UP_TO_DATE) return false;
+                if (!MAP_UP_TO_DATE) {
+                    LogUtils.printErrorMessage("Map identifier mismatch. The save files will not be used.");
+                    return false;
+                }
 
-                Node[] nodes = (Node[]) in.readObject();
-                path.nodes = nodes;
+                path.nodes = (Node[]) in.readObject();
+                LogUtils.printErrorMessage("Node array " + path.nodes + " successfully read.");
 
             } catch (FileNotFoundException e) {
-                e.printStackTrace();
+                LogUtils.printErrorMessage(e.getMessage());
+                LogUtils.printErrorMessage("Cannot find save files!");
                 return false;
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                LogUtils.printErrorMessage(e.getMessage());
+                LogUtils.printErrorMessage("Cannot find save files!");
                 return false;
             } catch (IOException e) {
-                e.printStackTrace();
+                LogUtils.printErrorMessage(e.getMessage());
+                LogUtils.printErrorMessage("Cannot find save files!");
                 return false;
             }
 
