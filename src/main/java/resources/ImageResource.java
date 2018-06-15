@@ -66,25 +66,6 @@ public class ImageResource {
             clouds[i] = loadImage("/clouds/cloud_" + i + ".png");
         }
 
-        //checkIntegrity();
-
-    }
-
-    public static void checkIntegrity() {
-
-        BufferedImage[] buffer = new BufferedImage[1000];
-
-        Executors.newSingleThreadExecutor().submit(() -> {
-            for (int i = 0; i < buffer.length; i++) {
-                buffer[i] = loadImage("/map/YUMA_airport_base.jpg");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
     }
 
     /**

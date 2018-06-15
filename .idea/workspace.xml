@@ -50,11 +50,20 @@
       <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="244" column="12" selection-start-line="244" selection-start-column="12" selection-end-line="244" selection-end-column="12" />
+            <state relative-caret-position="266">
+              <caret line="349" column="35" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="method#Canvas#0;class#Canvas#0" />
+                <element signature="method#paintComponent#0;class#Canvas#0" />
+                <element signature="method#paintPath#0;class#Canvas#0" />
+                <element signature="method#paintPlane#0;class#Canvas#0" />
+                <element signature="method#paintLight#0;class#Canvas#0" />
+                <element signature="method#paintCloud#0;class#Canvas#0" />
+                <element signature="method#paintAll#0;class#Canvas#0" />
+                <element signature="method#paintDebug#0;class#Canvas#0" />
+                <element signature="method#writeScreenForFrost#0;class#Canvas#0" />
               </folding>
             </state>
           </provider>
@@ -136,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/main/java/path/Intersection.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/dlc/DLCDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/bombardier_patch/AddedDefinitions.constants" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/ImageResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/speech/SpeechUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/music/MusicUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/MapUtils.java" />
@@ -160,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ui/CommandPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/DBrite.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/ADIRS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/ImageResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/Canvas.java" />
       </list>
     </option>
@@ -557,12 +566,12 @@
       <workItem from="1528994693068" duration="3587000" />
       <workItem from="1528999388170" duration="815000" />
       <workItem from="1529008084158" duration="2791000" />
-      <workItem from="1529013740563" duration="6180000" />
+      <workItem from="1529013740563" duration="7799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182445000" />
+    <option name="totallyTimeSpent" value="184064000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,6 +584,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" visible="true" weight="0.32969698" />
@@ -586,11 +596,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.09656652" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" x="44" y="129" width="1150" height="409" id="Run" order="2" sideWeight="0.76108724" type="WINDOWED" visible="true" weight="0.35393938" />
+      <window_info anchor="bottom" x="171" y="640" width="1150" height="409" id="Run" order="2" sideWeight="0.76108724" type="WINDOWED" visible="true" weight="0.35393938" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19170243" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19170243" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -880,16 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/constants/zero_day_patch/AddedDefinitions_2.constants">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1103,13 +1103,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/ImageResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="244" column="12" selection-start-line="244" selection-start-column="12" selection-end-line="244" selection-end-column="12" />
+        <state relative-caret-position="266">
+          <caret line="349" column="35" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#Canvas#0;class#Canvas#0" />
+            <element signature="method#paintComponent#0;class#Canvas#0" />
+            <element signature="method#paintPath#0;class#Canvas#0" />
+            <element signature="method#paintPlane#0;class#Canvas#0" />
+            <element signature="method#paintLight#0;class#Canvas#0" />
+            <element signature="method#paintCloud#0;class#Canvas#0" />
+            <element signature="method#paintAll#0;class#Canvas#0" />
+            <element signature="method#paintDebug#0;class#Canvas#0" />
+            <element signature="method#writeScreenForFrost#0;class#Canvas#0" />
           </folding>
         </state>
       </provider>
